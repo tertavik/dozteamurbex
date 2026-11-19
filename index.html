@@ -6,7 +6,7 @@
 <title>DOZ TEAM URBEX</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&family=Montserrat:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.css">
 <style>
@@ -15,8 +15,7 @@
   --bar-h:56px; --r:14px;
   --panel-top:calc(env(safe-area-inset-top,0px) + 74px);
   --glass-bg:rgba(30,30,36,.38); --g-hi:rgba(255,255,255,.75); --g-hi2:rgba(255,255,255,.35); --g-lo:rgba(255,255,255,.06); --g-shadow:rgba(0,0,0,.38);
-  --ui-font:system-ui; --ui-font-size:100%; --accent:#4f8cff; --accent-soft:rgba(79,140,255,.16);
-  font-family:var(--ui-font),system-ui,sans-serif;font-size:var(--ui-font-size);font-weight:400;
+  font-family:'Unbounded',system-ui,sans-serif;font-weight:400;
 }
 :root[data-theme="light"]{ --bg:#fff; --fg:#000; --muted:#6b6b6b; --line:#dcdcdc; --hover:#efefef;
   --glass-bg:rgba(255,255,255,.46); --g-hi:rgba(255,255,255,1); --g-hi2:rgba(255,255,255,.7); --g-lo:rgba(255,255,255,.25); --g-shadow:rgba(20,30,50,.22); }
@@ -36,19 +35,19 @@
 
 *{box-sizing:border-box}
 button,input{font:inherit}
-.leaflet-container,.leaflet-popup-content,.leaflet-control,.leaflet-popup-content-wrapper{font-family:var(--ui-font),system-ui,sans-serif!important}
+.leaflet-container,.leaflet-popup-content,.leaflet-control,.leaflet-popup-content-wrapper{font-family:'Unbounded',system-ui,sans-serif!important}
 html,body{height:100%;margin:0;background:var(--bg);color:var(--fg)}
 body{overflow:hidden}
 
 .bar{
   position:fixed;inset:calc(10px + env(safe-area-inset-top,0px)) auto auto 10px;z-index:1000;
-  height:52px;padding:0 10px 0 18px;display:flex;align-items:center;gap:8px;
+  height:52px;padding:0 10px 0 18px;display:flex;align-items:center;gap:12px;
   background:var(--bg);border:1px solid var(--line);border-radius:calc(var(--r)*1.5);
   box-shadow:0 8px 24px rgba(0,0,0,.35);transition:border-radius .2s;
 }
-.brand{margin:0;font-family:var(--ui-font),system-ui,sans-serif;font-weight:800;font-size:clamp(.95rem,3.6vw,1.2rem);letter-spacing:.04em;white-space:nowrap}
+.brand{margin:0;font-family:'Unbounded',sans-serif;font-weight:800;font-size:clamp(.95rem,3.6vw,1.2rem);letter-spacing:.04em;white-space:nowrap}
 
-.gps-btn{font:600 .56rem/1.35 var(--ui-font),system-ui,sans-serif;width:clamp(104px,20vw,164px);max-width:164px;min-width:0;flex:0 1 164px;padding:7px 9px;border:1px solid var(--line);border-radius:calc(var(--r)*.72);background:var(--bg);color:var(--fg);cursor:pointer;white-space:normal;overflow-wrap:anywhere;word-break:normal;text-align:center;line-height:1.35;transition:all .22s ease;position:relative;isolation:isolate}
+.gps-btn{font:600 .56rem/1.35 'Unbounded',system-ui,sans-serif;width:clamp(104px,20vw,164px);max-width:164px;min-width:0;flex:0 1 164px;padding:7px 9px;border:1px solid var(--line);border-radius:calc(var(--r)*.72);background:var(--bg);color:var(--fg);cursor:pointer;white-space:normal;overflow-wrap:anywhere;word-break:normal;text-align:center;line-height:1.35;transition:all .22s ease;position:relative;isolation:isolate}
 .gps-btn:hover{background:var(--fg);color:var(--bg)}
 .gps-btn.active{border-color:#19d36b;color:#19d36b}
 .gps-btn:disabled{opacity:.75;cursor:default}
@@ -138,7 +137,7 @@ html[data-glass="on"] .profile-logout{backdrop-filter:blur(18px) saturate(180%);
 .status.done .progress{display:none}
 
 .cl{display:grid;place-items:center;border-radius:50%;background:#fff;color:#000;border:3px solid #000;
-  box-shadow:0 0 0 2px #fff,0 2px 8px rgba(0,0,0,.5);font-family:var(--ui-font),system-ui,sans-serif;font-weight:600;font-size:.72rem}
+  box-shadow:0 0 0 2px #fff,0 2px 8px rgba(0,0,0,.5);font-family:'Unbounded',sans-serif;font-weight:600;font-size:.72rem}
 .cl.m{font-size:.8rem}.cl.l{font-size:.88rem}.cl.xl{font-size:.95rem}
 
 /* Усі окремі точки мають той самий білий стиль, що й кластери */
@@ -189,7 +188,7 @@ html[data-glass="on"] .profile-logout{backdrop-filter:blur(18px) saturate(180%);
 .leaflet-popup-content{margin:14px 16px;font-size:.72rem;min-width:220px}
 .leaflet-popup-close-button{color:var(--fg)!important}
 
-.pop-name{font-family:var(--ui-font),system-ui,sans-serif;font-weight:600;font-size:.8rem;line-height:1.35;margin:0 18px 10px 0}
+.pop-name{font-family:'Unbounded',sans-serif;font-weight:600;font-size:.8rem;line-height:1.35;margin:0 18px 10px 0}
 .pop-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 0;border-top:1px solid var(--line)}
 .pop-row .k{color:var(--muted);font-size:.64rem}
 .pop-row .v{font-weight:600;font-variant-numeric:tabular-nums;text-align:right}
@@ -199,7 +198,7 @@ html[data-glass="on"] .profile-logout{backdrop-filter:blur(18px) saturate(180%);
 .user-location-dot{width:18px;height:18px;border-radius:50%;background:#19d36b;border:3px solid #fff;box-shadow:0 0 0 5px rgba(25,211,107,.22),0 0 18px rgba(25,211,107,.9);position:relative}
 .user-location-dot:after{content:'';position:absolute;inset:-8px;border:1px solid rgba(25,211,107,.65);border-radius:50%;animation:gpsPulse 1.8s ease-out infinite}
 @keyframes gpsPulse{0%{transform:scale(.55);opacity:.9}100%{transform:scale(1.65);opacity:0}}
-.user-location-label{font-family:var(--ui-font),system-ui,sans-serif!important;font-size:10px;font-weight:700;color:#111;background:#fff;border:1px solid #19d36b;border-radius:9px;padding:4px 7px;white-space:nowrap;box-shadow:0 2px 10px #0005}
+.user-location-label{font-family:'Unbounded',system-ui,sans-serif!important;font-size:10px;font-weight:700;color:#111;background:#fff;border:1px solid #19d36b;border-radius:9px;padding:4px 7px;white-space:nowrap;box-shadow:0 2px 10px #0005}
 
 .pop-actions{display:flex;gap:8px;margin-top:10px}
 .pop-actions button,.pop-actions a{flex:1;text-align:center;padding:7px 10px;font-weight:600;font-size:.64rem;cursor:pointer;background:var(--bg);color:var(--fg);border:1px solid var(--fg);border-radius:calc(var(--r)*.5);text-decoration:none}
@@ -408,219 +407,6 @@ body.auth-locked > #notice, body.auth-locked > #status { visibility:hidden; }
   box-shadow:0 2px 10px rgba(55,140,255,.45);font-size:13px;font-weight:900}
 @media(max-width:420px){.auth-card{padding:22px;border-radius:22px}.avatar-grid{gap:6px}.avatar-choice{height:44px}}
 
-
-/* Favorites + feedback */
-.top-action{width:36px;height:36px;display:grid;place-items:center;cursor:pointer;background:transparent;color:var(--fg);border:1px solid var(--line);border-radius:min(calc(var(--r)*1.3),18px);transition:all .24s cubic-bezier(.2,.8,.2,1)}
-.top-action svg{width:19px;height:19px}
-.top-action:hover,.top-action:active{background:var(--hover);transform:scale(.94)}
-.fav-list{display:grid;gap:7px;margin-top:8px}
-.fav-item{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px 10px;border:1px solid var(--line);border-radius:11px;font:600 .65rem system-ui}
-.fav-item button{border:0;background:transparent;color:var(--fg);cursor:pointer;padding:4px}
-.fav-empty{color:var(--muted);font:12px system-ui;padding:8px 2px}
-.feedback-backdrop{position:fixed;inset:0;z-index:3000;display:grid;place-items:center;padding:18px;background:rgba(0,0,0,.48);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:opacity .22s}
-.feedback-backdrop.open{opacity:1;pointer-events:auto}
-.feedback-card{position:relative;width:min(390px,100%);padding:22px;border:1px solid var(--line);border-radius:22px;background:var(--glass-bg);color:var(--fg);backdrop-filter:blur(28px) saturate(180%);-webkit-backdrop-filter:blur(28px) saturate(180%);box-shadow:0 20px 60px rgba(0,0,0,.35);transform:translateY(10px) scale(.97);transition:transform .24s}
-.feedback-backdrop.open .feedback-card{transform:translateY(0) scale(1)}
-.feedback-head{display:flex;align-items:center;justify-content:space-between;font-weight:800;font-size:.9rem;margin-bottom:10px}
-.feedback-close{width:30px;height:30px;border:1px solid var(--line);border-radius:10px;background:transparent;color:var(--fg);font-size:20px;cursor:pointer}
-.feedback-card p{font:13px/1.55 system-ui;color:var(--muted);margin:0 0 14px}
-.feedback-link{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:9px;padding:13px;border:1px solid var(--line);border-radius:13px;color:var(--fg);text-decoration:none;font:650 13px system-ui}
-.feedback-link:hover{background:var(--hover)}
-.feedback-link small{display:block;color:var(--muted);font-weight:400;margin-top:3px}
-
-
-/* === Header controls: one consistent Liquid Glass style === */
-.bar > .gear,
-.bar > .top-action {
-  box-sizing:border-box!important;
-  width:36px!important;
-  min-width:36px!important;
-  height:36px!important;
-  flex:0 0 36px!important;
-  display:grid!important;
-  place-items:center!important;
-  position:relative!important;
-  isolation:isolate!important;
-  overflow:hidden!important;
-  border:1px solid var(--line)!important;
-  border-radius:min(calc(var(--r)*1.3),18px)!important;
-  background:var(--glass-bg,var(--bg))!important;
-  color:var(--fg)!important;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.20),0 4px 12px rgba(0,0,0,.12)!important;
-  -webkit-backdrop-filter:blur(24px) saturate(180%)!important;
-  backdrop-filter:blur(24px) saturate(180%)!important;
-  transform:none!important;
-}
-.bar > .gear::before,
-.bar > .top-action::before {
-  content:""!important;
-  position:absolute!important;
-  inset:0!important;
-  z-index:0!important;
-  pointer-events:none!important;
-  border-radius:inherit!important;
-  background:radial-gradient(130% 100% at 4% 0%,rgba(255,255,255,.34),transparent 54%),
-    linear-gradient(145deg,rgba(255,255,255,.17),rgba(255,255,255,.025) 48%,rgba(255,255,255,.09))!important;
-}
-.bar > .gear::after,
-.bar > .top-action::after {
-  content:""!important;
-  position:absolute!important;
-  inset:0!important;
-  z-index:2!important;
-  padding:1px!important;
-  pointer-events:none!important;
-  border-radius:inherit!important;
-  background:linear-gradient(145deg,rgba(255,255,255,.55),rgba(255,255,255,.12) 40%,rgba(255,255,255,.05))!important;
-  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0)!important;
-  -webkit-mask-composite:xor!important;
-  mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0)!important;
-}
-.bar > .gear > svg,
-.bar > .top-action > svg {
-  position:relative!important;
-  z-index:1!important;
-  width:19px!important;
-  height:19px!important;
-}
-.bar > .gear:hover,
-.bar > .top-action:hover {
-  filter:brightness(1.12);
-  background:var(--hover)!important;
-}
-.bar > .gear[aria-expanded="true"] {
-  background:var(--glass-bg,var(--bg))!important;
-  color:var(--fg)!important;
-}
-.bar > .gear[aria-expanded="true"]::before,
-.bar > .top-action:active::before {
-  background:rgba(255,255,255,.18)!important;
-}
-
-/* OSM credit stays visible, but no longer occupies the bottom-right corner. */
-.doz-map-attribution {
-  margin:0 0 calc(8px + env(safe-area-inset-bottom,0px)) 10px!important;
-  padding:3px 7px!important;
-  border:1px solid var(--line)!important;
-  border-radius:8px!important;
-  color:var(--muted)!important;
-  background:var(--glass-bg,var(--bg))!important;
-  font:10px/1.3 system-ui,sans-serif!important;
-  opacity:.58;
-  -webkit-backdrop-filter:blur(12px)!important;
-  backdrop-filter:blur(12px)!important;
-}
-.doz-map-attribution a {color:inherit!important;text-decoration:none!important}
-
-/* Mobile: keep every header control on-screen without horizontal overflow. */
-@media(max-width:600px) {
-  .bar {
-    left:8px!important;
-    right:8px!important;
-    width:auto!important;
-    max-width:none!important;
-    box-sizing:border-box!important;
-    height:48px!important;
-    padding:0 7px!important;
-    gap:5px!important;
-    justify-content:space-between!important;
-    border-radius:16px!important;
-  }
-  .bar .brand {
-    flex:1 1 auto!important;
-    min-width:0!important;
-    overflow:hidden!important;
-    text-overflow:ellipsis!important;
-    white-space:nowrap!important;
-    font-size:clamp(.66rem,3.1vw,.9rem)!important;
-    letter-spacing:.015em!important;
-  }
-  .bar .gps-btn {
-    flex:0 1 82px!important;
-    width:82px!important;
-    min-width:0!important;
-    max-width:82px!important;
-    padding:5px 4px!important;
-    font-size:clamp(.39rem,1.9vw,.5rem)!important;
-    line-height:1.2!important;
-    white-space:normal!important;
-  }
-  .bar > .gear,
-  .bar > .top-action {
-    width:32px!important;
-    min-width:32px!important;
-    height:32px!important;
-    flex-basis:32px!important;
-    border-radius:11px!important;
-  }
-  .bar > .gear > svg,
-  .bar > .top-action > svg {width:17px!important;height:17px!important}
-}
-@media(max-width:360px) {
-  .bar {gap:3px!important;padding:0 5px!important}
-  .bar .brand {font-size:.64rem!important}
-  .bar .gps-btn {flex-basis:70px!important;width:70px!important;max-width:70px!important;font-size:.38rem!important}
-  .bar > .gear,.bar > .top-action {width:30px!important;min-width:30px!important;height:30px!important;flex-basis:30px!important}
-}
-
-
-/* Profile directory */
-.profile-search-panel{left:auto;right:14px;transform-origin:top right}
-.profile-search-panel .panel-scroll{padding:14px 16px 16px}
-.profile-search-label{display:block;margin:17px 0 7px;color:var(--muted);font:600 .68rem system-ui}
-.profile-search-field{display:flex;align-items:center;gap:9px;min-height:42px;padding:0 11px;border:1px solid var(--line);border-radius:13px;background:var(--hover)}
-.profile-search-field svg{width:18px;height:18px;flex:0 0 18px;color:var(--muted)}
-.profile-search-field input{width:100%;min-width:0;border:0;outline:0;background:transparent;color:var(--fg);font:600 .78rem system-ui}
-.profile-search-field input::placeholder{color:var(--muted);opacity:.8}
-.profile-search-status{padding:11px 2px 5px;color:var(--muted);font:11px/1.4 system-ui}
-.profile-search-results{display:grid;gap:7px;max-height:min(48vh,360px);overflow:auto;overscroll-behavior:contain}
-.profile-search-result{display:flex;align-items:center;gap:10px;width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:12px;background:var(--hover);color:var(--fg);text-align:left;cursor:pointer;transition:background .18s,border-color .18s}
-.profile-search-result:hover{background:var(--bg);border-color:var(--fg)}
-.profile-search-avatar{width:36px;height:36px;flex:0 0 36px;display:grid;place-items:center;border:1px solid var(--line);border-radius:11px;background:var(--bg);font-size:21px}
-.profile-search-name{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:700 .76rem system-ui}
-.profile-search-empty{padding:12px 4px;color:var(--muted);font:12px/1.45 system-ui}
-.profile-search-panel .panel-scroll{max-height:min(72vh,560px);overflow:auto}
-@media(max-width:600px){
-  .profile-search-panel{right:8px;width:min(340px,calc(100vw - 16px))}
-  .profile-search-results{max-height:45vh}
-}
-
-/* Єдиний регулятор заокруглення для всіх основних елементів інтерфейсу. */
-body :is(.panel,.auth-card,.feedback-card,.feedback-link,.auth-input,.auth-primary,.auth-secondary,.auth-back,.profile-close,.profile-avatar-preview,.profile-avatar-edit,.profile-save,.profile-logout,.avatar-choice,.opt,.seg,.notice,.top-action,.gear,.gps-btn,.profile-search-field,.profile-search-result,.profile-search-avatar,.fav-item,.leaflet-popup-content-wrapper,.leaflet-control-zoom){
-  border-radius:var(--r)!important;
-  transition:border-radius .2s ease;
-}
-/* Круглі індикатори та прапорці лишаються круглими/прямокутними. */
-body :is(.verified-mark,.cl,.user-location-dot,.user-location-dot:after,.flag){border-radius:50%!important}
-body .flag{border-radius:3px!important}
-
-
-/* ---------- Theme presets, accent palette and typography ---------- */
-:root[data-preset="ios27"]{--bg:#050507;--fg:#f5f5f7;--muted:#a1a1aa;--line:rgba(255,255,255,.13);--hover:rgba(255,255,255,.09);--glass-bg:rgba(28,28,34,.56);--g-shadow:rgba(0,0,0,.48)}
-:root[data-preset="windows"]{--bg:#f3f5f8;--fg:#20242b;--muted:#667085;--line:#d6dbe3;--hover:#e8edf4;--glass-bg:transparent;--g-shadow:rgba(20,30,50,.12)}
-:root[data-preset="windows"] .panel,:root[data-preset="windows"] .auth-card,:root[data-preset="windows"] .feedback-card{box-shadow:0 8px 24px var(--g-shadow);backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
-:root[data-preset="windows"] .panel{border-radius:var(--r)}
-body :is(button,a,.opt,.seg,.auth-input,.profile-search-field,.profile-close,.gear,.gps-btn,.profile-save,.profile-logout,.feedback-link){transition:border-radius .18s,background .18s,color .18s,border-color .18s}
-body :is(.panel,.auth-card,.feedback-card,.feedback-link,.auth-input,.auth-primary,.auth-secondary,.auth-back,.profile-close,.profile-avatar-edit,.profile-save,.profile-logout,.avatar-choice,.opt,.seg,.notice,.top-action,.gear,.gps-btn,.profile-search-field,.profile-search-result,.leaflet-popup-content-wrapper,.leaflet-control-zoom,.setting-select,.theme-preset){border-radius:calc(var(--r)*.8)!important}
-body :is(.auth-primary,.profile-save,.feedback-link:hover,.theme-preset.active){border-color:var(--accent)!important}
-body :is(a,.feedback-link:hover){outline-color:var(--accent)}
-body :is(.opt input:checked + span,.seg input:checked + span,.theme-preset.active,.palette-swatch[aria-pressed="true"]){outline-color:var(--accent)}
-body :is(.opt input:checked + span,.seg input:checked + span){box-shadow:inset 0 0 0 1px var(--accent)}
-.theme-preset-wrap{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 14px}
-.theme-preset{display:flex;align-items:center;gap:9px;min-height:58px;padding:9px 10px;border:1px solid var(--line);border-radius:calc(var(--r)*.8);background:var(--hover);color:var(--fg);text-align:left;cursor:pointer;font:600 .7rem/1.25 var(--ui-font),system-ui,sans-serif}
-.theme-preset.active{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
-.preset-preview{width:34px;height:34px;flex:none;border-radius:10px;border:1px solid #ffffff30;background:linear-gradient(145deg,#08080b 0 50%,#34343c 50%);position:relative;overflow:hidden}
-.preset-preview.ios:after{content:"";position:absolute;inset:5px;border-radius:7px;background:linear-gradient(135deg,#8ab8ff,#c5a5ff)}
-.preset-preview.win{background:linear-gradient(135deg,#f5f7fa 0 50%,#dce4ef 50%)}
-.preset-preview.win:after{content:"⊞";position:absolute;inset:0;display:grid;place-items:center;color:#1673d1;font-size:23px}
-.palette-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;padding:8px 2px 12px}
-.palette-swatch{width:100%;aspect-ratio:1;border:2px solid transparent;border-radius:50%;background:var(--swatch);cursor:pointer;box-shadow:inset 0 0 0 1px #0002}
-.palette-swatch[aria-pressed="true"]{outline:2px solid var(--accent);outline-offset:2px;transform:scale(.92)}
-.setting-select{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:calc(var(--r)*.65);background:var(--hover);color:var(--fg);font:500 .75rem var(--ui-font),system-ui,sans-serif;margin:4px 0 12px}
-.setting-subtitle{font-size:.65rem;color:var(--muted);margin:0 0 5px}
-.preset-note{font-size:.58rem;color:var(--muted);line-height:1.45;margin:5px 2px 12px}
-@media(max-width:380px){.theme-preset{padding:7px;gap:6px;font-size:.63rem}.preset-preview{width:29px;height:29px}.palette-grid{gap:6px}}
-
 </style>
 </head>
 <body class="auth-locked">
@@ -628,9 +414,6 @@ body :is(.opt input:checked + span,.seg input:checked + span){box-shadow:inset 0
 <header class="bar">
   <h1 class="brand">DOZ TEAM URBEX</h1>
   <button id="gpsBtn" class="gps-btn" type="button" data-i18n="gpsEnable">Увімкнути GPS</button>
-  <button id="feedbackBtn" class="top-action" type="button" aria-label="Повідомлення" title="Повідомлення">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8A8.5 8.5 0 0 1 8.7 3.9a8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5Z"/></svg>
-  </button>
   <button id="accountBtn" class="gear account-btn" type="button" aria-label="Профіль" title="Профіль" aria-expanded="false" aria-controls="profilePanel">
     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <circle cx="12" cy="8" r="3.4"/>
@@ -641,12 +424,6 @@ body :is(.opt input:checked + span,.seg input:checked + span){box-shadow:inset 0
     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <circle cx="12" cy="12" r="3.2"/>
       <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/>
-    </svg>
-  </button>
-  <button id="profileSearchBtn" class="top-action" type="button" aria-label="Пошук профілів" title="Пошук профілів" aria-expanded="false" aria-controls="profileSearchPanel">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <circle cx="10.8" cy="10.8" r="6.8"/>
-      <path d="m16 16 5 5"/>
     </svg>
   </button>
 </header>
@@ -717,13 +494,7 @@ body :is(.opt input:checked + span,.seg input:checked + span){box-shadow:inset 0
 
 <aside id="panel" class="panel" hidden>
 <div class="panel-scroll">
-  <div class="profile-panel-head settings-panel-head"><div class="profile-panel-title" data-i18n="settings">Налаштування</div><button type="button" id="closeSettingsBtn" class="profile-close" aria-label="Закрити налаштування" data-i18n-aria="closeSettings">×</button></div>
-  <p class="group-title" data-i18n="presetTitle">Готові теми</p>
-  <div class="theme-preset-wrap" id="themePresetWrap">
-    <button type="button" class="theme-preset" data-preset="ios27"><span class="preset-preview ios"></span><span data-i18n="presetIOS">iOS 27</span></button>
-    <button type="button" class="theme-preset" data-preset="windows"><span class="preset-preview win"></span><span data-i18n="presetWindows">Windows</span></button>
-  </div>
-  <p class="preset-note" data-i18n="presetNote">Готова тема налаштовує вигляд інтерфейсу, але не змінює карту та мову.</p>
+  <div class="profile-panel-head settings-panel-head"><div class="profile-panel-title" data-i18n="settings">Налаштування</div><button type="button" id="closeSettingsBtn" class="profile-close" aria-label="Закрити налаштування" data-i18n-aria="closeSettings" data-i18n-aria="closeSettings">×</button></div>
   <p class="group-title" data-i18n="viewTitle"></p>
   <label class="opt"><input type="radio" name="base" value="scheme"><span data-i18n="scheme"></span></label>
   <label class="opt"><input type="radio" name="base" value="sat"><span data-i18n="sat"></span></label>
@@ -742,22 +513,10 @@ body :is(.opt input:checked + span,.seg input:checked + span){box-shadow:inset 0
   </div>
 
   <label class="opt switch" id="glassRow"><span data-i18n="glass"></span><input type="checkbox" id="glassToggle"></label>
-  <p class="group-title" data-i18n="paletteTitle">Кастомна палітра</p>
-  <p class="setting-subtitle" data-i18n="paletteHint">30 кольорів і відтінків. Акцент синхронізується з активною темою.</p>
-  <div class="palette-grid" id="paletteGrid" aria-label="Палітра кольорів"></div>
   <div class="range">
     <div class="range-head"><span data-i18n="radius"></span><b id="radiusVal"></b></div>
-    <input type="range" id="radius" min="0" max="32" step="1" aria-labelledby="radiusVal">
+    <input type="range" id="radius" min="0" max="28" step="1" aria-labelledby="radiusVal">
   </div>
-  <div class="range">
-    <div class="range-head"><span data-i18n="fontSizeLabel"></span><b id="fontSizeVal"></b></div>
-    <input type="range" id="fontSize" min="80" max="125" step="5" aria-labelledby="fontSizeVal">
-  </div>
-  <p class="setting-subtitle" data-i18n="fontLabel">Шрифт інтерфейсу</p>
-  <select class="setting-select" id="fontSelect" aria-label="Шрифт інтерфейсу">
-    <option value="system" data-i18n="fontSystem" style="font-family:system-ui,sans-serif">Звичайний системний</option>
-    <option value="Unbounded" style="font-family:'Unbounded',sans-serif">Unbounded</option><option value="Inter" style="font-family:'Inter',sans-serif">Inter</option><option value="Roboto" style="font-family:'Roboto',sans-serif">Roboto</option><option value="Montserrat" style="font-family:'Montserrat',sans-serif">Montserrat</option><option value="Nunito" style="font-family:'Nunito',sans-serif">Nunito</option><option value="Rubik" style="font-family:'Rubik',sans-serif">Rubik</option>
-  </select>
 
   <p class="group-title" data-i18n="langTitle"></p>
   <label class="opt"><input type="radio" name="lang" value="uk">
@@ -781,9 +540,8 @@ body :is(.opt input:checked + span,.seg input:checked + span){box-shadow:inset 0
     <div class="profile-avatar-edit-wrap"><div class="profile-avatar-preview" id="profileAvatarPreview">😀</div><button type="button" id="editProfileAvatarBtn" class="profile-avatar-edit" aria-label="Змінити аватар" title="Змінити аватар" data-i18n-aria="changeAvatar" data-i18n-title="changeAvatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 5 4 4M4 20l4.2-.8L19 8.4a2.1 2.1 0 0 0-3-3L5.2 16.2 4 20Z"/></svg></button></div>
     <div class="profile-nick" id="profileNick">Нікнейм</div>
     <div class="profile-readonly-note" data-i18n="nickLocked">Нікнейм не можна змінити</div>
-    <div id="profileAvatarEditor" class="profile-avatar-editor" hidden>
     <p class="group-title" data-i18n="avatar">Аватар</p>
-    <div class="avatar-grid profile-avatar-grid" id="profileAvatarGrid">
+    <div class="avatar-grid profile-avatar-grid" id="profileAvatarGrid" hidden>
 <button type="button" class="avatar-choice selected" data-profile-avatar="😀">😀</button>
 <button type="button" class="avatar-choice" data-profile-avatar="😎">😎</button>
 <button type="button" class="avatar-choice" data-profile-avatar="🖕">🖕</button>
@@ -802,35 +560,10 @@ body :is(.opt input:checked + span,.seg input:checked + span){box-shadow:inset 0
     </div>
     <p class="auth-error profile-error" id="profileError" role="alert"></p>
     <button type="button" id="saveProfileBtn" class="profile-save" data-i18n="saveAvatar">Зберегти аватар</button>
-    </div>
     <button type="button" id="profileLogoutBtn" class="profile-logout" data-i18n="logout">Вийти з акаунта</button>
   </div>
 </aside>
 
-<aside id="profileSearchPanel" class="panel profile-search-panel" hidden aria-label="Пошук профілів" data-i18n-aria="searchProfiles">
-  <div class="panel-scroll profile-search-scroll">
-    <div class="profile-panel-head">
-      <div class="profile-panel-title" data-i18n="searchProfiles">Пошук профілів</div>
-      <button type="button" id="closeProfileSearchBtn" class="profile-close" aria-label="Закрити" data-i18n-aria="close">×</button>
-    </div>
-    <label class="profile-search-label" for="profileSearchInput" data-i18n="searchByNick">Знайти користувача за нікнеймом</label>
-    <div class="profile-search-field">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>
-      <input id="profileSearchInput" type="search" maxlength="24" autocomplete="off" spellcheck="false" placeholder="Введи нікнейм..." data-i18n-placeholder="searchNickPlaceholder">
-    </div>
-    <div id="profileSearchStatus" class="profile-search-status" data-i18n="searchMinChars">Введи щонайменше 2 символи</div>
-    <div id="profileSearchResults" class="profile-search-results" aria-live="polite"></div>
-  </div>
-</aside>
-
-<div id="feedbackModal" class="feedback-backdrop" aria-hidden="true">
-  <section class="feedback-card" role="dialog" aria-modal="true" aria-labelledby="feedbackTitle">
-    <div class="feedback-head"><span id="feedbackTitle" data-i18n="feedbackTitle">Зворотний зв’язок</span><button id="feedbackClose" class="feedback-close" type="button" aria-label="Закрити" data-i18n-aria="close">×</button></div>
-    <p data-i18n="feedbackText">Знайшов помилку або маєш пропозицію? Напиши команді DOZ TEAM URBEX у відповідному чаті.</p>
-    <a class="feedback-link" href="https://t.me/dozteamurbex/10" target="_blank" rel="noopener"><span><span data-i18n="reportBug">Повідомити про баг</span><small>@dozteamurbex/10</small></span><span>↗</span></a>
-    <a class="feedback-link" href="https://t.me/dozteamurbex/11" target="_blank" rel="noopener"><span><span data-i18n="suggestIdea">Запропонувати ідею</span><small>@dozteamurbex/11</small></span><span>↗</span></a>
-  </section>
-</div>
 <div id="notice" class="notice" role="alert" data-i18n="tilesFail" hidden></div>
 
 <div id="status" class="status" role="status">
@@ -888,13 +621,7 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
       errGeneric: 'Не вдалося виконати дію. Перевір налаштування Firebase.',
       errTimeoutShort: 'Firebase не відповідає понад 18 секунд.',
       errProfile: 'Не вдалося завантажити профіль. Перевір правила Firestore.',
-      errAvatarSave: 'Не вдалося зберегти аватар.',
-      searchProfiles: 'Пошук профілів', searchByNick: 'Знайти користувача за нікнеймом', searchNickPlaceholder: 'Введи нікнейм...',
-      searchMinChars: 'Введи щонайменше 2 символи', searchNeedLogin: 'Увійди в акаунт, щоб шукати профілі', searchLoginFirst: 'Спочатку увійди в акаунт',
-      searchLoading: 'Шукаю профілі…', searchNoResults: 'За цим нікнеймом профілів не знайдено', searchFound: 'Знайдено профілів: ',
-      searchPermission: 'Firebase заборонив читання профілів. Онови Firestore Rules.', searchError: 'Не вдалося виконати пошук. Перевір з’єднання з Firebase.',
-      feedbackTitle: 'Зворотний зв’язок', feedbackText: 'Знайшов помилку або маєш пропозицію? Напиши команді DOZ TEAM URBEX у відповідному чаті.',
-      reportBug: 'Повідомити про баг', suggestIdea: 'Запропонувати ідею', presetTitle: 'Готові теми', presetIOS: 'iOS 27', presetWindows: 'Windows', presetNote: 'Готова тема змінює вигляд інтерфейсу, але не карту та мову.', paletteTitle: 'Кастомна палітра', paletteHint: '30 кольорів і відтінків. Акцент синхронізується з активною темою.', fontSizeLabel: 'Розмір тексту', fontLabel: 'Шрифт інтерфейсу', fontSystem: 'Звичайний системний', radiusValue: 'px'
+      errAvatarSave: 'Не вдалося зберегти аватар.'
     },
     ru: {
       settings: 'Настройки', viewTitle: 'Вид карты',
@@ -931,13 +658,7 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
       errGeneric: 'Не удалось выполнить действие. Проверь настройки Firebase.',
       errTimeoutShort: 'Firebase не отвечает более 18 секунд.',
       errProfile: 'Не удалось загрузить профиль. Проверь правила Firestore.',
-      errAvatarSave: 'Не удалось сохранить аватар.',
-      searchProfiles: 'Поиск профилей', searchByNick: 'Найти пользователя по никнейму', searchNickPlaceholder: 'Введи никнейм...',
-      searchMinChars: 'Введи не менее 2 символов', searchNeedLogin: 'Войди в аккаунт, чтобы искать профили', searchLoginFirst: 'Сначала войди в аккаунт',
-      searchLoading: 'Ищу профили…', searchNoResults: 'Профили с таким никнеймом не найдены', searchFound: 'Найдено профилей: ',
-      searchPermission: 'Firebase запретил чтение профилей. Обнови Firestore Rules.', searchError: 'Не удалось выполнить поиск. Проверь подключение к Firebase.',
-      feedbackTitle: 'Обратная связь', feedbackText: 'Нашёл ошибку или есть предложение? Напиши команде DOZ TEAM URBEX в соответствующем чате.',
-      reportBug: 'Сообщить об ошибке', suggestIdea: 'Предложить идею', presetTitle: 'Готовые темы', presetIOS: 'iOS 27', presetWindows: 'Windows', presetNote: 'Готовая тема меняет вид интерфейса, но не карту и язык.', paletteTitle: 'Своя палитра', paletteHint: '30 цветов и оттенков. Акцент синхронизируется с активной темой.', fontSizeLabel: 'Размер текста', fontLabel: 'Шрифт интерфейса', fontSystem: 'Обычный системный', radiusValue: 'px'
+      errAvatarSave: 'Не удалось сохранить аватар.'
     },
     en: {
       settings: 'Settings', viewTitle: 'Map appearance',
@@ -976,29 +697,19 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
       errGeneric: 'The action could not be completed. Check your Firebase settings.',
       errTimeoutShort: 'Firebase has not responded for more than 18 seconds.',
       errProfile: 'Could not load the profile. Check your Firestore rules.',
-      errAvatarSave: 'Could not save the avatar.',
-      searchProfiles: 'Profile search', searchByNick: 'Find a user by nickname', searchNickPlaceholder: 'Enter a nickname...',
-      searchMinChars: 'Enter at least 2 characters', searchNeedLogin: 'Sign in to search profiles', searchLoginFirst: 'Please sign in first',
-      searchLoading: 'Searching profiles…', searchNoResults: 'No profiles found for this nickname', searchFound: 'Profiles found: ',
-      searchPermission: 'Firebase denied access to profiles. Update Firestore Rules.', searchError: 'Search failed. Check your Firebase connection.',
-      feedbackTitle: 'Feedback', feedbackText: 'Found a bug or have a suggestion? Message the DOZ TEAM URBEX team in the appropriate chat.',
-      reportBug: 'Report a bug', suggestIdea: 'Suggest an idea', presetTitle: 'Presets', presetIOS: 'iOS 27', presetWindows: 'Windows', presetNote: 'A preset changes the interface only, not the map or language.', paletteTitle: 'Custom palette', paletteHint: '30 colors and shades. The accent follows the active theme.', fontSizeLabel: 'Text size', fontLabel: 'Interface font', fontSystem: 'Default system', radiusValue: 'px'
+      errAvatarSave: 'Could not save the avatar.'
     }
   };
   const STATUS_COLORS = ['#ff6a2b', '#2fbf6b', '#e5484d'];
 
   /* ---------- збережені налаштування ---------- */
   const KEY = 'doz-urbex-map-v3';
-  const state = { theme: 'dark', base: 'scheme', labels: true, lang: 'ru', glass: false, radius: 14, preset: 'custom', accent: '#4f8cff', font: 'system', fontSize: 100 };
+  const state = { theme: 'dark', base: 'scheme', labels: true, lang: 'ru', glass: false, radius: 14 };
   try { Object.assign(state, JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) {}
   if (!['scheme', 'sat', 'relief'].includes(state.base)) state.base = 'scheme';
   if (!['dark', 'light', 'orange', 'green', 'blue'].includes(state.theme)) state.theme = 'dark';
-  if (!['custom','ios27','windows'].includes(state.preset)) state.preset = 'custom';
-  if (!/^#[0-9a-fA-F]{6}$/.test(state.accent || '')) state.accent = '#4f8cff';
-  if (!['system','Unbounded','Inter','Roboto','Montserrat','Nunito','Rubik'].includes(state.font)) state.font = 'system';
-  state.fontSize = Math.min(125, Math.max(80, Number(state.fontSize) || 100));
   if (!I18N[state.lang]) state.lang = 'ru';
-  state.radius = Math.min(32, Math.max(0, Number.isFinite(+state.radius) ? Math.round(+state.radius) : 14));
+  state.radius = Math.min(28, Math.max(0, Number.isFinite(+state.radius) ? Math.round(+state.radius) : 14));
   state.glass = !!state.glass;
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} };
   const T = k => (I18N[state.lang] && I18N[state.lang][k] !== undefined) ? I18N[state.lang][k] : (I18N.ru[k] !== undefined ? I18N.ru[k] : k);
@@ -1034,16 +745,9 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
     }
   }, true);
   /* ---------- карта ---------- */
-  const map = L.map('map', { zoomControl: false, attributionControl: false, preferCanvas: true, minZoom: 4, maxZoom: 19 })
+  const map = L.map('map', { zoomControl: false, preferCanvas: true, minZoom: 4, maxZoom: 19 })
                .setView([48.8, 31.2], 6);
   L.control.zoom({ position: 'bottomright' }).addTo(map);
-  const mapAttribution = L.control({position:'bottomleft'});
-  mapAttribution.onAdd = function(){
-    const el = L.DomUtil.create('div','doz-map-attribution');
-    el.innerHTML = '© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>';
-    return el;
-  };
-  mapAttribution.addTo(map);
   let zoomSoundTimer = null;
   map.on('zoomstart', () => {
     clearTimeout(zoomSoundTimer);
@@ -1286,50 +990,6 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
     return L.circleMarker([p[0], p[1]], Object.assign({ st }, styles[st] || styles[0]));
   }));
 
-
-  /* ---------- Обрані точки: зберігаються окремо для кожного акаунта ---------- */
-  window.DozFavorites = window.DozFavorites || {};
-  let favoriteUserKey = 'guest';
-  const favoriteStorageKey = () => 'doz_favorites_' + favoriteUserKey;
-  function getFavorites() {
-    try { return JSON.parse(localStorage.getItem(favoriteStorageKey()) || '[]'); } catch (_) { return []; }
-  }
-  function isFavorite(lat,lng) {
-    const key = Number(lat).toFixed(6)+','+Number(lng).toFixed(6);
-    return getFavorites().some(x => x.key === key);
-  }
-  function toggleFavorite(lat,lng) {
-    const key = Number(lat).toFixed(6)+','+Number(lng).toFixed(6);
-    const list = getFavorites();
-    const exists = list.some(x => x.key === key);
-    const next = exists ? list.filter(x => x.key !== key) : [...list,{key,lat:Number(lat),lng:Number(lng)}];
-    localStorage.setItem(favoriteStorageKey(),JSON.stringify(next));
-    renderFavoriteList();
-    return !exists;
-  }
-  function renderFavoriteList() {
-    const box = document.getElementById('profileFavorites');
-    if (!box) return;
-    const list = getFavorites();
-    box.replaceChildren();
-    if (!list.length) { const empty=document.createElement('div'); empty.className='fav-empty'; empty.textContent='Поки немає обраних точок'; box.append(empty); return; }
-    list.forEach(point => {
-      const row=document.createElement('div'); row.className='fav-item';
-      const name=document.createElement('span'); name.textContent=point.key;
-      const actions=document.createElement('span');
-      const go=document.createElement('button'); go.type='button'; go.textContent='На карті'; go.addEventListener('click',()=>{ map.flyTo([point.lat,point.lng],17,{duration:.85}); L.popup({offset:[0,-4]}).setLatLng([point.lat,point.lng]).setContent('Обрана точка').openOn(map); });
-      const del=document.createElement('button'); del.type='button'; del.textContent='×'; del.title='Прибрати з обраного'; del.addEventListener('click',()=>{toggleFavorite(point.lat,point.lng);});
-      actions.append(go,del); row.append(name,actions); box.append(row);
-    });
-  }
-  window.DozFavorites.setUser = uid => { favoriteUserKey = uid || 'guest'; renderFavoriteList(); };
-  const feedbackModal=document.getElementById('feedbackModal');
-  const closeFeedback=()=>{feedbackModal.classList.remove('open');feedbackModal.setAttribute('aria-hidden','true');};
-  document.getElementById('feedbackBtn')?.addEventListener('click',()=>{feedbackModal.classList.add('open');feedbackModal.setAttribute('aria-hidden','false');});
-  document.getElementById('feedbackClose')?.addEventListener('click',closeFeedback);
-  feedbackModal?.addEventListener('click',e=>{if(e.target===feedbackModal)closeFeedback();});
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeFeedback();});
-
   /* ---------- спливаюче вікно ---------- */
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   cluster.on('click', e => {
@@ -1348,17 +1008,12 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
        <div class="pop-row"><span class="k">${esc(T('coords'))}</span><span class="v">${txt}</span></div>
        <div class="pop-row"><span class="k">${esc(T('distance'))}</span><span class="v ${km === null ? 'gps-missing' : ''}" data-distance-value>${km === null ? esc(T('gpsWait')) : distanceText(km)}</span></div>
        <div class="pop-actions">
-         <button type="button" data-favorite>${isFavorite(ll.lat, ll.lng) ? "★ У обраному" : "☆ Додати в обране"}</button>
          <button type="button" data-copy>${esc(T('copy'))}</button>
          <a target="_blank" rel="noopener" href="https://www.google.com/maps?q=${ll.lat},${ll.lng}">${esc(T('gmaps'))}</a>
        </div>
        <div class="pop-actions">
          <a class="route-action ${km === null ? 'gps-route-disabled' : ''}" ${km === null ? 'aria-disabled="true"' : `href="${routeUrl}" target="_blank" rel="noopener"`} data-route-url="${routeUrl}">${esc(T('route'))}</a>
        </div>`;
-    el.querySelector('[data-favorite]').addEventListener('click', ev => {
-      const added = toggleFavorite(ll.lat,ll.lng);
-      ev.currentTarget.textContent = added ? '★ У обраному' : '☆ Додати в обране';
-    });
     const routeAction = el.querySelector('.route-action');
     routeAction.addEventListener('click', ev => {
       if (!userPosition) { ev.preventDefault(); startGPS(); }
@@ -1393,44 +1048,20 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
   const radiusInput = document.getElementById('radius');
   const radiusVal = document.getElementById('radiusVal');
   const glassToggle = document.getElementById('glassToggle');
-  const fontSelect = document.getElementById('fontSelect');
-  const fontSizeInput = document.getElementById('fontSize');
-  const fontSizeVal = document.getElementById('fontSizeVal');
-  const paletteGrid = document.getElementById('paletteGrid');
-  const PALETTE = ['#ef4444','#dc2626','#f97316','#ea580c','#f59e0b','#d97706','#eab308','#ca8a04','#84cc16','#65a30d','#22c55e','#16a34a','#10b981','#059669','#14b8a6','#0d9488','#06b6d4','#0891b2','#0ea5e9','#0284c7','#3b82f6','#2563eb','#6366f1','#4f46e5','#8b5cf6','#7c3aed','#a855f7','#9333ea','#ec4899','#db2777'];
-  const PRESETS = {
-    ios27: { theme:'dark', glass:true, radius:28, font:'Inter', fontSize:100, accent:'#8ab8ff' },
-    windows: { theme:'light', glass:false, radius:7, font:'system', fontSize:100, accent:'#1673d1' }
-  };
-  function setPresetButtons(){ document.querySelectorAll('[data-preset]').forEach(b=>{const active=b.dataset.preset===state.preset;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));}); }
-  function setPalette(){ paletteGrid.innerHTML=''; PALETTE.forEach(color=>{const b=document.createElement('button');b.type='button';b.className='palette-swatch';b.style.setProperty('--swatch',color);b.setAttribute('aria-label',color);b.setAttribute('aria-pressed',String(color.toLowerCase()===state.accent.toLowerCase()));b.title=color;b.addEventListener('click',()=>{state.accent=color;state.preset='custom';applyStyle();setPresetButtons();setPalette();});paletteGrid.appendChild(b);}); }
   function applyStyle() {
     const root = document.documentElement;
     root.dataset.glass = state.glass ? 'on' : 'off';
-    root.dataset.preset = state.preset;
     root.style.setProperty('--r', state.radius + 'px');
-    root.style.setProperty('--accent', state.accent);
-    root.style.setProperty('--accent-soft', state.accent + '26');
-    root.style.setProperty('--ui-font', state.font === 'system' ? 'system-ui' : '"' + state.font + '"');
-    root.style.setProperty('--ui-font-size', state.fontSize + '%');
     radiusVal.textContent = state.radius + ' px';
-    radiusInput.style.setProperty('--p', (state.radius / 32 * 100) + '%');
-    fontSizeVal.textContent = state.fontSize + '%';
-    fontSizeInput.style.setProperty('--p', ((state.fontSize-80) / 45 * 100) + '%');
-    glassToggle.checked = state.glass; radiusInput.value = state.radius; fontSizeInput.value = state.fontSize; fontSelect.value = state.font;
-    document.querySelectorAll('.palette-swatch').forEach(b=>b.setAttribute('aria-pressed',String(b.title.toLowerCase()===state.accent.toLowerCase())));
-    setPresetButtons(); save();
+    radiusInput.style.setProperty('--p', (state.radius / 28 * 100) + '%');
+    save();
   }
-  function markCustom(){ if(state.preset!=='custom'){state.preset='custom';document.documentElement.dataset.preset='custom';setPresetButtons();} }
   radiusInput.value = state.radius;
-  radiusInput.addEventListener('input', () => { markCustom(); state.radius = +radiusInput.value; applyStyle(); });
-  glassToggle.addEventListener('change', () => { markCustom(); state.glass = glassToggle.checked; applyStyle(); });
-  fontSizeInput.addEventListener('input',()=>{markCustom();state.fontSize=+fontSizeInput.value;applyStyle();});
-  fontSelect.addEventListener('change',()=>{markCustom();state.font=fontSelect.value;applyStyle();});
-  document.querySelectorAll('[data-preset]').forEach(btn=>btn.addEventListener('click',()=>{const preset=PRESETS[btn.dataset.preset];if(!preset)return;Object.assign(state,preset,{preset:btn.dataset.preset});applyTheme();applyStyle();}));
-  setPalette();
+  radiusInput.addEventListener('input', () => { state.radius = +radiusInput.value; applyStyle(); });
+  glassToggle.checked = state.glass;
+  glassToggle.addEventListener('change', () => { state.glass = glassToggle.checked; applyStyle(); });
 
-  function applyTheme() { document.documentElement.dataset.theme = state.theme; document.querySelectorAll('input[name="theme"]').forEach(i=>i.checked=i.value===state.theme); save(); }
+  function applyTheme() { document.documentElement.dataset.theme = state.theme; save(); }
   function applyLang() {
     document.documentElement.lang = state.lang;
     document.title = 'DOZ TEAM URBEX';
@@ -1448,7 +1079,7 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
     i.addEventListener('change', () => { state[key] = i.value; fn(); });
   });
   bind('base', 'base', applyBase);
-  bind('theme', 'theme', () => { markCustom(); applyTheme(); applyStyle(); });
+  bind('theme', 'theme', applyTheme);
   bind('lang', 'lang', applyLang);
   const lt = document.getElementById('labelsToggle');
   lt.checked = state.labels;
@@ -1556,10 +1187,7 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
     if (!auth.currentUser) return;
     profileError.textContent = '';
     profileAvatarDraft = currentProfile?.avatar || '😀';
-    document.getElementById('profileAvatarEditor').hidden = true;
-    document.getElementById('editProfileAvatarBtn').setAttribute('aria-expanded', 'false');
     renderProfilePanel();
-    window.DozFavorites?.setUser(auth.currentUser.uid);
     profilePanel.hidden = false;
     requestAnimationFrame(() => profilePanel.classList.add('is-open'));
     accountBtn.setAttribute('aria-expanded', 'true');
@@ -1636,7 +1264,6 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
 
   function showSignedIn(user, profile) {
     currentProfile = profile || profileFromUser(user);
-    window.DozFavorites?.setUser(user.uid);
     const nick = currentProfile.nick || (user.email || '').split('@')[0];
     document.body.classList.remove('auth-locked');
     gate.style.display = 'none';
@@ -1647,7 +1274,6 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
 
   accountBtn.addEventListener('click', e => {
     e.stopPropagation();
-    if (typeof closeProfileSearch === 'function') closeProfileSearch();
     const settingsPanel = document.getElementById('panel');
     settingsPanel?.classList.remove('is-open');
     if (settingsPanel) settingsPanel.hidden = true;
@@ -1656,108 +1282,6 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
     else openProfile();
   });
   document.getElementById('closeProfileBtn').addEventListener('click', closeProfile);
-
-  // Пошук публічних профілів за початком нікнейму (потрібна авторизація).
-  const profileSearchBtn = document.getElementById('profileSearchBtn');
-  const profileSearchPanel = document.getElementById('profileSearchPanel');
-  const profileSearchInput = document.getElementById('profileSearchInput');
-  const profileSearchStatus = document.getElementById('profileSearchStatus');
-  const profileSearchResults = document.getElementById('profileSearchResults');
-  let profileSearchTimer = null;
-  let profileSearchRequest = 0;
-
-  function closeProfileSearch() {
-    profileSearchPanel.classList.remove('is-open');
-    profileSearchBtn.setAttribute('aria-expanded', 'false');
-    setTimeout(() => {
-      if (!profileSearchPanel.classList.contains('is-open')) profileSearchPanel.hidden = true;
-    }, 300);
-  }
-
-  function openProfileSearch() {
-    if (!auth.currentUser) {
-      profileSearchStatus.textContent = tr('searchNeedLogin');
-      profileSearchResults.innerHTML = '';
-    }
-    const settingsPanel = document.getElementById('panel');
-    settingsPanel?.classList.remove('is-open');
-    if (settingsPanel) settingsPanel.hidden = true;
-    document.getElementById('settingsBtn')?.setAttribute('aria-expanded', 'false');
-    closeProfile();
-    profileSearchPanel.hidden = false;
-    requestAnimationFrame(() => profileSearchPanel.classList.add('is-open'));
-    profileSearchBtn.setAttribute('aria-expanded', 'true');
-    setTimeout(() => profileSearchInput.focus(), 80);
-  }
-
-  profileSearchBtn.addEventListener('click', e => {
-    e.stopPropagation();
-    if (profileSearchPanel.classList.contains('is-open')) closeProfileSearch();
-    else openProfileSearch();
-  });
-  document.getElementById('closeProfileSearchBtn').addEventListener('click', closeProfileSearch);
-
-  async function runProfileSearch() {
-    const term = profileSearchInput.value.trim().toLowerCase();
-    const requestId = ++profileSearchRequest;
-    profileSearchResults.innerHTML = '';
-    if (term.length < 2) {
-      profileSearchStatus.textContent = tr('searchMinChars');
-      return;
-    }
-    if (!auth.currentUser) {
-      profileSearchStatus.textContent = tr('searchLoginFirst');
-      return;
-    }
-    profileSearchStatus.textContent = tr('searchLoading');
-    try {
-      const snap = await db.collection('profiles')
-        .orderBy('nickLower')
-        .startAt(term)
-        .endAt(term + '\uf8ff')
-        .limit(25)
-        .get();
-      if (requestId !== profileSearchRequest) return;
-      const matches = snap.docs
-        .map(doc => ({id:doc.id, ...doc.data()}))
-        .filter(p => typeof p.nick === 'string' && typeof p.nickLower === 'string');
-      if (!matches.length) {
-        profileSearchStatus.textContent = tr('searchNoResults');
-        return;
-      }
-      profileSearchStatus.textContent = tr('searchFound') + matches.length;
-      matches.forEach(profile => {
-        const item = document.createElement('div');
-        item.className = 'profile-search-result';
-        const avatar = document.createElement('span');
-        avatar.className = 'profile-search-avatar';
-        avatar.textContent = allowedAvatars.includes(profile.avatar) ? profile.avatar : '😀';
-        const nick = document.createElement('span');
-        nick.className = 'profile-search-name';
-        nick.textContent = profile.nick;
-        item.append(avatar, nick);
-        profileSearchResults.append(item);
-      });
-    } catch (error) {
-      console.warn('Profile search:', error);
-      profileSearchStatus.textContent = error.code === 'permission-denied'
-        ? tr('searchPermission')
-        : tr('searchError');
-    }
-  }
-
-  profileSearchInput.addEventListener('input', () => {
-    clearTimeout(profileSearchTimer);
-    profileSearchTimer = setTimeout(runProfileSearch, 260);
-  });
-
-  document.addEventListener('click', e => {
-    if (!profileSearchPanel.hidden && !profileSearchPanel.contains(e.target) && e.target !== profileSearchBtn && !profileSearchBtn.contains(e.target)) closeProfileSearch();
-  });
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && !profileSearchPanel.hidden) closeProfileSearch();
-  });
-
   document.addEventListener('click', e => {
     const settingsPanel = document.getElementById('panel');
     const settingsBtn = document.getElementById('settingsBtn');
@@ -1766,16 +1290,14 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && !profilePanel.hidden) closeProfile(); });
 
   document.getElementById('editProfileAvatarBtn').addEventListener('click', () => {
-    const editor = document.getElementById('profileAvatarEditor');
-    editor.hidden = !editor.hidden;
-    profileError.textContent = '';
-    document.getElementById('editProfileAvatarBtn').setAttribute('aria-expanded', String(!editor.hidden));
-    if (!editor.hidden) document.getElementById('profileAvatarGrid').hidden = false;
+    const grid = document.getElementById('profileAvatarGrid');
+    grid.hidden = !grid.hidden;
   });
 
   document.querySelectorAll('[data-profile-avatar]').forEach(button => {
     button.addEventListener('click', () => {
       profileAvatarDraft = button.dataset.profileAvatar;
+      document.getElementById('profileAvatarGrid').hidden = true;
       profileAvatarPreview.textContent = profileAvatarDraft;
       document.querySelectorAll('[data-profile-avatar]').forEach(b => b.classList.toggle('selected', b === button));
     });
@@ -1793,8 +1315,6 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
       currentProfile.avatar = profileAvatarDraft;
       profileError.style.color = '#65d995';
       profileError.textContent = tr('avatarSaved');
-      document.getElementById('profileAvatarEditor').hidden = true;
-      document.getElementById('editProfileAvatarBtn').setAttribute('aria-expanded', 'false');
     } catch (err) {
       profileError.style.color = '';
       profileError.textContent = message(err);
@@ -1880,11 +1400,9 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
       document.body.classList.add('auth-locked');
       show('choice');
       currentProfile = null;
-      window.DozFavorites?.setUser('guest');
       return;
     }
     const fallback = profileFromUser(user);
-    window.DozFavorites?.setUser(user.uid);
     showSignedIn(user, fallback);
     loadOrCreateProfile(user, fallback).then(p => {
       currentProfile = p; profileAvatarDraft = p.avatar; renderProfilePanel();
