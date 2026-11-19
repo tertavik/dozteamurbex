@@ -206,16 +206,34 @@ html[data-glass="on"] .profile-logout{backdrop-filter:blur(18px) saturate(180%);
 .pop-actions button:hover,.pop-actions a:hover{background:var(--fg);color:var(--bg)}
 
 /* ---------- слайдер заокруглення ---------- */
-.range{padding:6px 10px 2px}
-.range-head{display:flex;justify-content:space-between;align-items:center;font-size:.76rem}
-.range-head b{font-weight:600;font-variant-numeric:tabular-nums;color:var(--muted);font-size:.68rem}
-.range input{--p:50%;appearance:none;-webkit-appearance:none;display:block;width:100%;height:24px;margin:6px 0 0;background:transparent;cursor:pointer}
-.range input::-webkit-slider-runnable-track{height:4px;border-radius:2px;background:linear-gradient(to right,var(--fg) var(--p),var(--line) var(--p))}
-.range input::-moz-range-track{height:4px;border-radius:2px;background:var(--line)}
-.range input::-moz-range-progress{height:4px;border-radius:2px;background:var(--fg)}
-.range input::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;margin-top:-8px;border-radius:50%;background:var(--fg);border:3px solid var(--bg);box-shadow:0 0 0 1px var(--fg)}
-.range input::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--fg);border:3px solid var(--bg);box-shadow:0 0 0 1px var(--fg)}
-.range input:focus-visible{outline:2px solid var(--fg);outline-offset:3px;border-radius:6px}
+.range{padding:10px 12px 8px;margin:7px 0;border:1px solid var(--line);border-radius:16px;background:var(--hover);}
+.range-head{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:.76rem}
+.range-head b{font-weight:700;font-variant-numeric:tabular-nums;color:var(--accent);font-size:.7rem;padding:4px 8px;border:1px solid var(--line);border-radius:9px;background:var(--glass-bg);min-width:48px;text-align:center}
+.range input{--p:50%;appearance:none;-webkit-appearance:none;display:block;width:100%;height:30px;margin:8px 0 0;background:transparent;cursor:pointer;touch-action:pan-y}
+.range input::-webkit-slider-runnable-track{height:7px;border-radius:99px;background:linear-gradient(to right,var(--accent) 0%,var(--accent) var(--p),var(--line) var(--p),var(--line) 100%);box-shadow:inset 0 0 0 1px #ffffff0b}
+.range input::-moz-range-track{height:7px;border-radius:99px;background:var(--line)}
+.range input::-moz-range-progress{height:7px;border-radius:99px;background:var(--accent)}
+.range input::-webkit-slider-thumb{-webkit-appearance:none;width:21px;height:21px;margin-top:-7px;border-radius:50%;background:var(--fg);border:4px solid var(--accent);box-shadow:0 2px 8px #0005,0 0 0 2px var(--bg);transition:transform .12s ease}
+.range input:active::-webkit-slider-thumb{transform:scale(1.16)}
+.range input::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--fg);border:4px solid var(--accent);box-shadow:0 2px 8px #0005,0 0 0 2px var(--bg)}
+.range input:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:8px}
+/* Custom dropdown for settings */
+#fontSelect{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.custom-select{position:relative;margin:5px 0 14px;z-index:5}
+.custom-select-trigger{width:100%;min-height:46px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 13px;border:1px solid var(--line);border-radius:15px;background:var(--hover);color:var(--fg);font:600 .76rem var(--ui-font),system-ui,sans-serif;text-align:left;cursor:pointer;box-shadow:inset 0 1px #ffffff0a;transition:border-color .18s,background .18s,transform .18s}
+.custom-select-trigger:hover,.custom-select.open .custom-select-trigger{border-color:var(--accent);background:var(--glass-bg)}
+.custom-select-trigger:active{transform:scale(.99)}
+.custom-select-chevron{width:17px;height:17px;flex:none;color:var(--muted);transition:transform .2s}
+.custom-select.open .custom-select-chevron{transform:rotate(180deg);color:var(--accent)}
+.custom-select-menu{position:absolute;left:0;right:0;top:calc(100% + 7px);padding:6px;max-height:245px;overflow:auto;overscroll-behavior:contain;border:1px solid var(--line);border-radius:15px;background:var(--glass-bg);backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);box-shadow:0 14px 38px #0005;display:none;z-index:100}
+.custom-select.open .custom-select-menu{display:grid;gap:3px;animation:selectIn .16s ease-out}
+@keyframes selectIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.custom-select-option{width:100%;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 11px;border:1px solid transparent;border-radius:10px;background:transparent;color:var(--fg);font:500 .74rem var(--ui-font),system-ui,sans-serif;text-align:left;cursor:pointer}
+.custom-select-option:hover{background:var(--hover);border-color:var(--line)}
+.custom-select-option[aria-selected="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--fg);font-weight:700}
+.custom-select-option[aria-selected="true"]:after{content:"✓";color:var(--accent);font-weight:900}
+:root[data-preset="windows"] .custom-select-menu{background:#fff}
+:root[data-preset="pornhub"] .custom-select-option[aria-selected="true"]{color:#ffad33}
 
 
 .theme-seg{display:flex;flex-wrap:wrap;gap:5px}
@@ -797,6 +815,13 @@ body :is(.opt input:checked + span,.seg input:checked + span){box-shadow:inset 0
     <option value="system" data-i18n="fontSystem" style="font-family:system-ui,sans-serif">Звичайний системний</option>
     <option value="Unbounded" style="font-family:'Unbounded',sans-serif">Unbounded</option><option value="Inter" style="font-family:'Inter',sans-serif">Inter</option><option value="Roboto" style="font-family:'Roboto',sans-serif">Roboto</option><option value="Montserrat" style="font-family:'Montserrat',sans-serif">Montserrat</option><option value="Nunito" style="font-family:'Nunito',sans-serif">Nunito</option><option value="Rubik" style="font-family:'Rubik',sans-serif">Rubik</option><option value="Caveat" data-i18n="fontCaveat" style="font-family:'Caveat',cursive">Caveat — рукописний</option><option value="Neucha" data-i18n="fontNeucha" style="font-family:'Neucha',cursive">Neucha — намальований</option><option value="Comfortaa" data-i18n="fontComfortaa" style="font-family:'Comfortaa',sans-serif">Comfortaa — округлий</option><option value="Oswald" data-i18n="fontOswald" style="font-family:'Oswald',sans-serif">Oswald — вузький</option><option value="Playfair Display" data-i18n="fontPlayfair" style="font-family:'Playfair Display',serif">Playfair Display — класичний</option>
   </select>
+  <div class="custom-select" id="fontCustomSelect">
+    <button type="button" class="custom-select-trigger" id="fontSelectTrigger" aria-haspopup="listbox" aria-expanded="false">
+      <span id="fontSelectCurrent">Звичайний системний</span>
+      <svg class="custom-select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+    </button>
+    <div class="custom-select-menu" id="fontSelectMenu" role="listbox" aria-label="Шрифт інтерфейсу"></div>
+  </div>
 
   <p class="group-title" data-i18n="langTitle"></p>
   <label class="opt"><input type="radio" name="lang" value="uk">
@@ -1437,6 +1462,36 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
   const radiusVal = document.getElementById('radiusVal');
   const glassToggle = document.getElementById('glassToggle');
   const fontSelect = document.getElementById('fontSelect');
+  const fontCustomSelect = document.getElementById('fontCustomSelect');
+  const fontSelectTrigger = document.getElementById('fontSelectTrigger');
+  const fontSelectCurrent = document.getElementById('fontSelectCurrent');
+  const fontSelectMenu = document.getElementById('fontSelectMenu');
+  function renderFontSelect(){
+    fontSelectMenu.innerHTML = '';
+    [...fontSelect.options].forEach(option=>{
+      const item=document.createElement('button');
+      item.type='button'; item.className='custom-select-option'; item.role='option';
+      item.dataset.value=option.value; item.textContent=option.textContent;
+      item.setAttribute('aria-selected',String(option.value===fontSelect.value));
+      item.addEventListener('click',()=>{
+        fontSelect.value=option.value;
+        fontSelect.dispatchEvent(new Event('change',{bubbles:true}));
+        closeFontSelect();
+      });
+      fontSelectMenu.appendChild(item);
+    });
+    const selected=fontSelect.options[fontSelect.selectedIndex];
+    if(selected) fontSelectCurrent.textContent=selected.textContent;
+    fontSelectMenu.querySelectorAll('[role="option"]').forEach(item=>item.setAttribute('aria-selected',String(item.dataset.value===fontSelect.value)));
+  }
+  function closeFontSelect(){fontCustomSelect.classList.remove('open');fontSelectTrigger.setAttribute('aria-expanded','false');}
+  fontSelectTrigger.addEventListener('click',()=>{
+    const open=!fontCustomSelect.classList.contains('open');
+    fontCustomSelect.classList.toggle('open',open);fontSelectTrigger.setAttribute('aria-expanded',String(open));
+  });
+  document.addEventListener('click',e=>{if(!fontCustomSelect.contains(e.target))closeFontSelect();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeFontSelect();});
+  renderFontSelect();
   const fontSizeInput = document.getElementById('fontSize');
   const fontSizeVal = document.getElementById('fontSizeVal');
   const PRESETS = {
@@ -1464,7 +1519,7 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
     radiusInput.style.setProperty('--p', (state.radius / 32 * 100) + '%');
     fontSizeVal.textContent = state.fontSize + '%';
     fontSizeInput.style.setProperty('--p', ((state.fontSize-80) / 45 * 100) + '%');
-    glassToggle.checked = state.glass; radiusInput.value = state.radius; fontSizeInput.value = state.fontSize; fontSelect.value = state.font;
+    glassToggle.checked = state.glass; radiusInput.value = state.radius; fontSizeInput.value = state.fontSize; fontSelect.value = state.font; renderFontSelect();
     setPresetButtons(); save();
   }
   function markCustom(){ if(state.preset!=='custom'){state.preset='custom';document.documentElement.dataset.preset='custom';setPresetButtons();} }
