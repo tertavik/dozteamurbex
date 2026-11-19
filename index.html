@@ -6,7 +6,7 @@
 <title>DOZ TEAM URBEX</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&family=Montserrat:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&family=Montserrat:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800&family=Rubik:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&family=Neucha&family=Comfortaa:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap&subset=cyrillic,latin" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.css">
 <style>
@@ -600,6 +600,16 @@ body .flag{border-radius:3px!important}
 :root[data-preset="windows"]{--bg:#f3f5f8;--fg:#20242b;--muted:#667085;--line:#d6dbe3;--hover:#e8edf4;--glass-bg:transparent;--g-shadow:rgba(20,30,50,.12)}
 :root[data-preset="windows"] .panel,:root[data-preset="windows"] .auth-card,:root[data-preset="windows"] .feedback-card{box-shadow:0 8px 24px var(--g-shadow);backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
 :root[data-preset="windows"] .panel{border-radius:var(--r)}
+:root[data-preset="pornhub"]{--bg:#050505;--fg:#f5f5f5;--muted:#aaa;--line:#292929;--hover:#171717;--glass-bg:rgba(20,20,20,.72);--g-shadow:rgba(0,0,0,.5);--accent:#ff9000;--accent-soft:rgba(255,144,0,.16)}
+:root[data-preset="pornhub"] body{background:#050505}
+:root[data-preset="pornhub"] :is(.auth-primary,.profile-save,.feedback-link,.gps-btn.active){background:#ff9000!important;color:#090909!important;border-color:#ff9000!important}
+:root[data-preset="pornhub"] :is(.gear[aria-expanded="true"],.seg input:checked+span){background:#ff9000!important;color:#090909!important}
+:root[data-preset="pornhub"] .panel{border-color:#393939}
+:root[data-button-style="glass"] :is(button,.opt,.seg,.setting-select,.theme-preset){backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+:root[data-button-style="flat"] :is(button,.opt,.seg,.setting-select,.theme-preset){box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+:root[data-button-style="solid"] :is(.auth-primary,.profile-save,.feedback-link,.theme-preset.active,.seg input:checked+span){background:var(--accent)!important;color:#fff!important;border-color:var(--accent)!important}
+:root[data-preset="windows"] :is(button,.opt,.seg,.setting-select,.theme-preset){backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+
 body :is(button,a,.opt,.seg,.auth-input,.profile-search-field,.profile-close,.gear,.gps-btn,.profile-save,.profile-logout,.feedback-link){transition:border-radius .18s,background .18s,color .18s,border-color .18s}
 body :is(.panel,.auth-card,.feedback-card,.feedback-link,.auth-input,.auth-primary,.auth-secondary,.auth-back,.profile-close,.profile-avatar-edit,.profile-save,.profile-logout,.avatar-choice,.opt,.seg,.notice,.top-action,.gear,.gps-btn,.profile-search-field,.profile-search-result,.leaflet-popup-content-wrapper,.leaflet-control-zoom,.setting-select,.theme-preset){border-radius:calc(var(--r)*.8)!important}
 body :is(.auth-primary,.profile-save,.feedback-link:hover,.theme-preset.active){border-color:var(--accent)!important}
@@ -612,14 +622,35 @@ body :is(.opt input:checked + span,.seg input:checked + span){box-shadow:inset 0
 .preset-preview{width:34px;height:34px;flex:none;border-radius:10px;border:1px solid #ffffff30;background:linear-gradient(145deg,#08080b 0 50%,#34343c 50%);position:relative;overflow:hidden}
 .preset-preview.ios:after{content:"";position:absolute;inset:5px;border-radius:7px;background:linear-gradient(135deg,#8ab8ff,#c5a5ff)}
 .preset-preview.win{background:linear-gradient(135deg,#f5f7fa 0 50%,#dce4ef 50%)}
+.preset-preview.ph{background:linear-gradient(135deg,#050505 0 50%,#ff9000 50%)}
 .preset-preview.win:after{content:"⊞";position:absolute;inset:0;display:grid;place-items:center;color:#1673d1;font-size:23px}
-.palette-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;padding:8px 2px 12px}
-.palette-swatch{width:100%;aspect-ratio:1;border:2px solid transparent;border-radius:50%;background:var(--swatch);cursor:pointer;box-shadow:inset 0 0 0 1px #0002}
-.palette-swatch[aria-pressed="true"]{outline:2px solid var(--accent);outline-offset:2px;transform:scale(.92)}
+
+.settings-compact-title{margin:9px 0 4px}
+.button-style-seg{margin:4px 0 8px}
+
+
 .setting-select{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:calc(var(--r)*.65);background:var(--hover);color:var(--fg);font:500 .75rem var(--ui-font),system-ui,sans-serif;margin:4px 0 12px}
 .setting-subtitle{font-size:.65rem;color:var(--muted);margin:0 0 5px}
 .preset-note{font-size:.58rem;color:var(--muted);line-height:1.45;margin:5px 2px 12px}
-@media(max-width:380px){.theme-preset{padding:7px;gap:6px;font-size:.63rem}.preset-preview{width:29px;height:29px}.palette-grid{gap:6px}}
+@media(max-width:380px){.theme-preset{padding:7px;gap:6px;font-size:.63rem}.preset-preview{width:29px;height:29px}}
+
+
+/* Справжнє застосування готових тем до всього інтерфейсу */
+:root[data-preset="ios27"]{--bg:#050507!important;--fg:#f5f5f7!important;--muted:#a1a1aa!important;--line:rgba(255,255,255,.14)!important;--hover:rgba(255,255,255,.09)!important;--glass-bg:rgba(28,28,34,.62)!important;--accent:#8ab8ff!important;--accent-soft:rgba(138,184,255,.18)!important}
+:root[data-preset="windows"]{--bg:#f3f5f8!important;--fg:#20242b!important;--muted:#667085!important;--line:#d6dbe3!important;--hover:#e8edf4!important;--glass-bg:#fff!important;--accent:#1673d1!important;--accent-soft:rgba(22,115,209,.14)!important}
+:root[data-preset="pornhub"]{--bg:#050505!important;--fg:#f5f5f5!important;--muted:#aaa!important;--line:#292929!important;--hover:#171717!important;--glass-bg:rgba(20,20,20,.82)!important;--accent:#ff9000!important;--accent-soft:rgba(255,144,0,.18)!important}
+:root[data-preset="windows"] .panel,:root[data-preset="windows"] .auth-card,:root[data-preset="windows"] .feedback-card{background:var(--bg)!important;color:var(--fg)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;box-shadow:0 8px 24px rgba(20,30,50,.14)!important}
+:root[data-preset="ios27"] .panel,:root[data-preset="ios27"] .auth-card,:root[data-preset="ios27"] .feedback-card{background:rgba(28,28,34,.82)!important;color:#f5f5f7!important;backdrop-filter:blur(28px) saturate(180%)!important;-webkit-backdrop-filter:blur(28px) saturate(180%)!important}
+:root[data-preset="pornhub"] .panel,:root[data-preset="pornhub"] .auth-card,:root[data-preset="pornhub"] .feedback-card{background:#101010!important;color:#f5f5f5!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+:root[data-preset="windows"] :is(button,.opt,.seg,.setting-select,.theme-preset){backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+:root[data-preset="ios27"] :is(button,.opt,.seg,.setting-select,.theme-preset){backdrop-filter:blur(18px) saturate(180%)!important;-webkit-backdrop-filter:blur(18px) saturate(180%)!important}
+:root[data-preset="pornhub"] :is(.auth-primary,.profile-save,.feedback-link,.gps-btn.active,.gear[aria-expanded="true"],.seg input:checked+span){background:#ff9000!important;color:#080808!important;border-color:#ff9000!important}
+:root[data-preset="windows"]{--r:7px!important}
+:root[data-preset="ios27"]{--r:28px!important}
+:root[data-preset="pornhub"]{--r:15px!important}
+.panel-scroll{--menu-gap:var(--settings-gap,8px)}
+.panel-scroll > .group-title{margin-top:calc(var(--settings-gap,8px)*.65)}
+.panel-scroll > .opt,.panel-scroll > .seg,.panel-scroll > .range,.panel-scroll > .theme-preset-wrap{margin-bottom:calc(var(--settings-gap,8px)*.35)}
 
 </style>
 </head>
@@ -722,6 +753,7 @@ body :is(.opt input:checked + span,.seg input:checked + span){box-shadow:inset 0
   <div class="theme-preset-wrap" id="themePresetWrap">
     <button type="button" class="theme-preset" data-preset="ios27"><span class="preset-preview ios"></span><span data-i18n="presetIOS">iOS 27</span></button>
     <button type="button" class="theme-preset" data-preset="windows"><span class="preset-preview win"></span><span data-i18n="presetWindows">Windows</span></button>
+    <button type="button" class="theme-preset" data-preset="pornhub"><span class="preset-preview ph"></span><span data-i18n="presetPornhub">Pornhub</span></button>
   </div>
   <p class="preset-note" data-i18n="presetNote">Готова тема налаштовує вигляд інтерфейсу, але не змінює карту та мову.</p>
   <p class="group-title" data-i18n="viewTitle"></p>
@@ -732,8 +764,8 @@ body :is(.opt input:checked + span,.seg input:checked + span){box-shadow:inset 0
   <label class="opt switch" id="labelsRow"><span data-i18n="labels"></span><input type="checkbox" id="labelsToggle"></label>
   <p class="hint" id="labelsHint" data-i18n="labelsHint" hidden></p>
 
-  <p class="group-title" data-i18n="uiTitle"></p>
-  <div class="seg theme-seg" role="radiogroup">
+  <p class="group-title settings-compact-title" data-i18n="uiTitle"></p>
+  <div class="seg theme-seg" role="radiogroup" aria-label="Колір інтерфейсу">
     <label><input type="radio" name="theme" value="dark"><span data-i18n="black"></span></label>
     <label><input type="radio" name="theme" value="light"><span data-i18n="white"></span></label>
     <label><input type="radio" name="theme" value="orange"><span data-i18n="orange"></span></label>
@@ -741,10 +773,17 @@ body :is(.opt input:checked + span,.seg input:checked + span){box-shadow:inset 0
     <label><input type="radio" name="theme" value="blue"><span data-i18n="blue"></span></label>
   </div>
 
+  <p class="group-title settings-compact-title" data-i18n="buttonStyleTitle">Стиль кнопок</p>
+  <div class="seg button-style-seg" role="radiogroup" aria-label="Стиль кнопок">
+    <label><input type="radio" name="buttonStyle" value="glass"><span data-i18n="buttonGlass">Скло</span></label>
+    <label><input type="radio" name="buttonStyle" value="flat"><span data-i18n="buttonFlat">Плоскі</span></label>
+    <label><input type="radio" name="buttonStyle" value="solid"><span data-i18n="buttonSolid">Акцентні</span></label>
+  </div>
   <label class="opt switch" id="glassRow"><span data-i18n="glass"></span><input type="checkbox" id="glassToggle"></label>
-  <p class="group-title" data-i18n="paletteTitle">Кастомна палітра</p>
-  <p class="setting-subtitle" data-i18n="paletteHint">30 кольорів і відтінків. Акцент синхронізується з активною темою.</p>
-  <div class="palette-grid" id="paletteGrid" aria-label="Палітра кольорів"></div>
+  <div class="range">
+    <div class="range-head"><span data-i18n="menuSpacing">Відстань між пунктами меню</span><b id="menuSpacingVal"></b></div>
+    <input type="range" id="menuSpacing" min="0" max="24" step="1" aria-labelledby="menuSpacingVal">
+  </div>
   <div class="range">
     <div class="range-head"><span data-i18n="radius"></span><b id="radiusVal"></b></div>
     <input type="range" id="radius" min="0" max="32" step="1" aria-labelledby="radiusVal">
@@ -756,7 +795,7 @@ body :is(.opt input:checked + span,.seg input:checked + span){box-shadow:inset 0
   <p class="setting-subtitle" data-i18n="fontLabel">Шрифт інтерфейсу</p>
   <select class="setting-select" id="fontSelect" aria-label="Шрифт інтерфейсу">
     <option value="system" data-i18n="fontSystem" style="font-family:system-ui,sans-serif">Звичайний системний</option>
-    <option value="Unbounded" style="font-family:'Unbounded',sans-serif">Unbounded</option><option value="Inter" style="font-family:'Inter',sans-serif">Inter</option><option value="Roboto" style="font-family:'Roboto',sans-serif">Roboto</option><option value="Montserrat" style="font-family:'Montserrat',sans-serif">Montserrat</option><option value="Nunito" style="font-family:'Nunito',sans-serif">Nunito</option><option value="Rubik" style="font-family:'Rubik',sans-serif">Rubik</option>
+    <option value="Unbounded" style="font-family:'Unbounded',sans-serif">Unbounded</option><option value="Inter" style="font-family:'Inter',sans-serif">Inter</option><option value="Roboto" style="font-family:'Roboto',sans-serif">Roboto</option><option value="Montserrat" style="font-family:'Montserrat',sans-serif">Montserrat</option><option value="Nunito" style="font-family:'Nunito',sans-serif">Nunito</option><option value="Rubik" style="font-family:'Rubik',sans-serif">Rubik</option><option value="Caveat" data-i18n="fontCaveat" style="font-family:'Caveat',cursive">Caveat — рукописний</option><option value="Neucha" data-i18n="fontNeucha" style="font-family:'Neucha',cursive">Neucha — намальований</option><option value="Comfortaa" data-i18n="fontComfortaa" style="font-family:'Comfortaa',sans-serif">Comfortaa — округлий</option><option value="Oswald" data-i18n="fontOswald" style="font-family:'Oswald',sans-serif">Oswald — вузький</option><option value="Playfair Display" data-i18n="fontPlayfair" style="font-family:'Playfair Display',serif">Playfair Display — класичний</option>
   </select>
 
   <p class="group-title" data-i18n="langTitle"></p>
@@ -894,7 +933,7 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
       searchLoading: 'Шукаю профілі…', searchNoResults: 'За цим нікнеймом профілів не знайдено', searchFound: 'Знайдено профілів: ',
       searchPermission: 'Firebase заборонив читання профілів. Онови Firestore Rules.', searchError: 'Не вдалося виконати пошук. Перевір з’єднання з Firebase.',
       feedbackTitle: 'Зворотний зв’язок', feedbackText: 'Знайшов помилку або маєш пропозицію? Напиши команді DOZ TEAM URBEX у відповідному чаті.',
-      reportBug: 'Повідомити про баг', suggestIdea: 'Запропонувати ідею', presetTitle: 'Готові теми', presetIOS: 'iOS 27', presetWindows: 'Windows', presetNote: 'Готова тема змінює вигляд інтерфейсу, але не карту та мову.', paletteTitle: 'Кастомна палітра', paletteHint: '30 кольорів і відтінків. Акцент синхронізується з активною темою.', fontSizeLabel: 'Розмір тексту', fontLabel: 'Шрифт інтерфейсу', fontSystem: 'Звичайний системний', radiusValue: 'px'
+      reportBug: 'Повідомити про баг', suggestIdea: 'Запропонувати ідею', menuSpacing: 'Відстань між пунктами меню', presetTitle: 'Готові теми', presetIOS: 'iOS 27', presetWindows: 'Windows', presetNote: 'Готова тема змінює вигляд інтерфейсу, але не карту та мову.', fontSizeLabel: 'Розмір тексту', fontLabel: 'Шрифт інтерфейсу', fontSystem: 'Звичайний системний', radiusValue: 'px', presetPornhub: 'Pornhub', buttonStyleTitle: 'Стиль кнопок', buttonGlass: 'Скло', buttonFlat: 'Плоскі', buttonSolid: 'Акцентні', fontCaveat: 'Caveat — рукописний', fontNeucha: 'Neucha — мальований', fontComfortaa: 'Comfortaa — округлий', fontOswald: 'Oswald — вузький', fontPlayfair: 'Playfair Display — класичний'
     },
     ru: {
       settings: 'Настройки', viewTitle: 'Вид карты',
@@ -937,7 +976,7 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
       searchLoading: 'Ищу профили…', searchNoResults: 'Профили с таким никнеймом не найдены', searchFound: 'Найдено профилей: ',
       searchPermission: 'Firebase запретил чтение профилей. Обнови Firestore Rules.', searchError: 'Не удалось выполнить поиск. Проверь подключение к Firebase.',
       feedbackTitle: 'Обратная связь', feedbackText: 'Нашёл ошибку или есть предложение? Напиши команде DOZ TEAM URBEX в соответствующем чате.',
-      reportBug: 'Сообщить об ошибке', suggestIdea: 'Предложить идею', presetTitle: 'Готовые темы', presetIOS: 'iOS 27', presetWindows: 'Windows', presetNote: 'Готовая тема меняет вид интерфейса, но не карту и язык.', paletteTitle: 'Своя палитра', paletteHint: '30 цветов и оттенков. Акцент синхронизируется с активной темой.', fontSizeLabel: 'Размер текста', fontLabel: 'Шрифт интерфейса', fontSystem: 'Обычный системный', radiusValue: 'px'
+      reportBug: 'Сообщить об ошибке', suggestIdea: 'Предложить идею', menuSpacing: 'Расстояние между пунктами меню', presetTitle: 'Готовые темы', presetIOS: 'iOS 27', presetWindows: 'Windows', presetNote: 'Готовая тема меняет вид интерфейса, но не карту и язык.', fontSizeLabel: 'Размер текста', fontLabel: 'Шрифт интерфейса', fontSystem: 'Обычный системный', radiusValue: 'px', presetPornhub: 'Pornhub', buttonStyleTitle: 'Стиль кнопок', buttonGlass: 'Стекло', buttonFlat: 'Плоские', buttonSolid: 'Акцентные', fontCaveat: 'Caveat — рукописный', fontNeucha: 'Neucha — рисованный', fontComfortaa: 'Comfortaa — округлый', fontOswald: 'Oswald — узкий', fontPlayfair: 'Playfair Display — классический'
     },
     en: {
       settings: 'Settings', viewTitle: 'Map appearance',
@@ -982,23 +1021,25 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
       searchLoading: 'Searching profiles…', searchNoResults: 'No profiles found for this nickname', searchFound: 'Profiles found: ',
       searchPermission: 'Firebase denied access to profiles. Update Firestore Rules.', searchError: 'Search failed. Check your Firebase connection.',
       feedbackTitle: 'Feedback', feedbackText: 'Found a bug or have a suggestion? Message the DOZ TEAM URBEX team in the appropriate chat.',
-      reportBug: 'Report a bug', suggestIdea: 'Suggest an idea', presetTitle: 'Presets', presetIOS: 'iOS 27', presetWindows: 'Windows', presetNote: 'A preset changes the interface only, not the map or language.', paletteTitle: 'Custom palette', paletteHint: '30 colors and shades. The accent follows the active theme.', fontSizeLabel: 'Text size', fontLabel: 'Interface font', fontSystem: 'Default system', radiusValue: 'px'
+      reportBug: 'Report a bug', suggestIdea: 'Suggest an idea', menuSpacing: 'Menu item spacing', presetTitle: 'Presets', presetIOS: 'iOS 27', presetWindows: 'Windows', presetNote: 'A preset changes the interface only, not the map or language.', fontSizeLabel: 'Text size', fontLabel: 'Interface font', fontSystem: 'Default system', radiusValue: 'px', presetPornhub: 'Pornhub', buttonStyleTitle: 'Button style', buttonGlass: 'Glass', buttonFlat: 'Flat', buttonSolid: 'Accent', fontCaveat: 'Caveat — handwritten', fontNeucha: 'Neucha — sketch', fontComfortaa: 'Comfortaa — rounded', fontOswald: 'Oswald — condensed', fontPlayfair: 'Playfair Display — classic'
     }
   };
   const STATUS_COLORS = ['#ff6a2b', '#2fbf6b', '#e5484d'];
 
   /* ---------- збережені налаштування ---------- */
   const KEY = 'doz-urbex-map-v3';
-  const state = { theme: 'dark', base: 'scheme', labels: true, lang: 'ru', glass: false, radius: 14, preset: 'custom', accent: '#4f8cff', font: 'system', fontSize: 100 };
+  const state = { theme: 'dark', base: 'scheme', labels: true, lang: 'ru', glass: false, radius: 14, menuSpacing: 8, preset: 'custom', accent: '#4f8cff', font: 'system', fontSize: 100, buttonStyle: 'glass' };
   try { Object.assign(state, JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) {}
   if (!['scheme', 'sat', 'relief'].includes(state.base)) state.base = 'scheme';
   if (!['dark', 'light', 'orange', 'green', 'blue'].includes(state.theme)) state.theme = 'dark';
-  if (!['custom','ios27','windows'].includes(state.preset)) state.preset = 'custom';
+  if (!['custom','ios27','windows','pornhub'].includes(state.preset)) state.preset = 'custom';
+  if (!['glass','flat','solid'].includes(state.buttonStyle)) state.buttonStyle = 'glass';
   if (!/^#[0-9a-fA-F]{6}$/.test(state.accent || '')) state.accent = '#4f8cff';
-  if (!['system','Unbounded','Inter','Roboto','Montserrat','Nunito','Rubik'].includes(state.font)) state.font = 'system';
+  if (!['system','Unbounded','Inter','Roboto','Montserrat','Nunito','Rubik','Caveat','Neucha','Comfortaa','Oswald','Playfair Display'].includes(state.font)) state.font = 'system';
   state.fontSize = Math.min(125, Math.max(80, Number(state.fontSize) || 100));
   if (!I18N[state.lang]) state.lang = 'ru';
   state.radius = Math.min(32, Math.max(0, Number.isFinite(+state.radius) ? Math.round(+state.radius) : 14));
+  state.menuSpacing = Math.min(24, Math.max(0, Number.isFinite(+state.menuSpacing) ? Math.round(+state.menuSpacing) : 8));
   state.glass = !!state.glass;
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} };
   const T = k => (I18N[state.lang] && I18N[state.lang][k] !== undefined) ? I18N[state.lang][k] : (I18N.ru[k] !== undefined ? I18N.ru[k] : k);
@@ -1390,25 +1431,31 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
   document.addEventListener('click', e => { if (!panel.hidden && !panel.contains(e.target) && !document.getElementById('profilePanel')?.contains(e.target) && e.target !== accountBtn && !accountBtn?.contains(e.target)) togglePanel(false); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && !panel.hidden) { togglePanel(false); btn.setAttribute('aria-expanded','false'); btn.focus(); } });
 
+  const menuSpacingInput = document.getElementById('menuSpacing');
+  const menuSpacingVal = document.getElementById('menuSpacingVal');
   const radiusInput = document.getElementById('radius');
   const radiusVal = document.getElementById('radiusVal');
   const glassToggle = document.getElementById('glassToggle');
   const fontSelect = document.getElementById('fontSelect');
   const fontSizeInput = document.getElementById('fontSize');
   const fontSizeVal = document.getElementById('fontSizeVal');
-  const paletteGrid = document.getElementById('paletteGrid');
-  const PALETTE = ['#ef4444','#dc2626','#f97316','#ea580c','#f59e0b','#d97706','#eab308','#ca8a04','#84cc16','#65a30d','#22c55e','#16a34a','#10b981','#059669','#14b8a6','#0d9488','#06b6d4','#0891b2','#0ea5e9','#0284c7','#3b82f6','#2563eb','#6366f1','#4f46e5','#8b5cf6','#7c3aed','#a855f7','#9333ea','#ec4899','#db2777'];
   const PRESETS = {
-    ios27: { theme:'dark', glass:true, radius:28, font:'Inter', fontSize:100, accent:'#8ab8ff' },
-    windows: { theme:'light', glass:false, radius:7, font:'system', fontSize:100, accent:'#1673d1' }
+    ios27: { theme:'dark', glass:true, radius:28, font:'Inter', fontSize:100, accent:'#8ab8ff', buttonStyle:'glass' },
+    windows: { theme:'light', glass:false, radius:7, font:'system', fontSize:100, accent:'#1673d1', buttonStyle:'flat' },
+    pornhub: { theme:'dark', glass:false, radius:15, font:'Inter', fontSize:100, accent:'#ff9000', buttonStyle:'solid' }
   };
   function setPresetButtons(){ document.querySelectorAll('[data-preset]').forEach(b=>{const active=b.dataset.preset===state.preset;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));}); }
-  function setPalette(){ paletteGrid.innerHTML=''; PALETTE.forEach(color=>{const b=document.createElement('button');b.type='button';b.className='palette-swatch';b.style.setProperty('--swatch',color);b.setAttribute('aria-label',color);b.setAttribute('aria-pressed',String(color.toLowerCase()===state.accent.toLowerCase()));b.title=color;b.addEventListener('click',()=>{state.accent=color;state.preset='custom';applyStyle();setPresetButtons();setPalette();});paletteGrid.appendChild(b);}); }
   function applyStyle() {
     const root = document.documentElement;
     root.dataset.glass = state.glass ? 'on' : 'off';
     root.dataset.preset = state.preset;
+    root.dataset.buttonStyle = state.buttonStyle;
+    document.querySelectorAll('input[name="buttonStyle"]').forEach(i=>i.checked=i.value===state.buttonStyle);
     root.style.setProperty('--r', state.radius + 'px');
+    root.style.setProperty('--settings-gap', state.menuSpacing + 'px');
+    menuSpacingVal.textContent = state.menuSpacing + ' px';
+    menuSpacingInput.value = state.menuSpacing;
+    menuSpacingInput.style.setProperty('--p', (state.menuSpacing / 24 * 100) + '%');
     root.style.setProperty('--accent', state.accent);
     root.style.setProperty('--accent-soft', state.accent + '26');
     root.style.setProperty('--ui-font', state.font === 'system' ? 'system-ui' : '"' + state.font + '"');
@@ -1418,17 +1465,18 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
     fontSizeVal.textContent = state.fontSize + '%';
     fontSizeInput.style.setProperty('--p', ((state.fontSize-80) / 45 * 100) + '%');
     glassToggle.checked = state.glass; radiusInput.value = state.radius; fontSizeInput.value = state.fontSize; fontSelect.value = state.font;
-    document.querySelectorAll('.palette-swatch').forEach(b=>b.setAttribute('aria-pressed',String(b.title.toLowerCase()===state.accent.toLowerCase())));
     setPresetButtons(); save();
   }
   function markCustom(){ if(state.preset!=='custom'){state.preset='custom';document.documentElement.dataset.preset='custom';setPresetButtons();} }
+  menuSpacingInput.value = state.menuSpacing;
+  menuSpacingInput.addEventListener('input',()=>{markCustom();state.menuSpacing=+menuSpacingInput.value;applyStyle();});
   radiusInput.value = state.radius;
   radiusInput.addEventListener('input', () => { markCustom(); state.radius = +radiusInput.value; applyStyle(); });
   glassToggle.addEventListener('change', () => { markCustom(); state.glass = glassToggle.checked; applyStyle(); });
   fontSizeInput.addEventListener('input',()=>{markCustom();state.fontSize=+fontSizeInput.value;applyStyle();});
   fontSelect.addEventListener('change',()=>{markCustom();state.font=fontSelect.value;applyStyle();});
   document.querySelectorAll('[data-preset]').forEach(btn=>btn.addEventListener('click',()=>{const preset=PRESETS[btn.dataset.preset];if(!preset)return;Object.assign(state,preset,{preset:btn.dataset.preset});applyTheme();applyStyle();}));
-  setPalette();
+  document.querySelectorAll('input[name="buttonStyle"]').forEach(i=>i.addEventListener('change',()=>{markCustom();state.buttonStyle=i.value;applyStyle();}));
 
   function applyTheme() { document.documentElement.dataset.theme = state.theme; document.querySelectorAll('input[name="theme"]').forEach(i=>i.checked=i.value===state.theme); save(); }
   function applyLang() {
