@@ -644,6 +644,8 @@ body :is(.opt input:checked + span,.seg input:checked + span){box-shadow:inset 0
 .theme-preset[hidden],.theme-extra-list[hidden]{display:none!important}
 .theme-extra-list{display:block;padding-top:2px}
 .theme-category-title{margin:13px 2px 5px;color:var(--muted);font:700 .62rem/1.3 var(--ui-font),system-ui,sans-serif;text-transform:uppercase;letter-spacing:.09em}
+.theme-category-note{margin:-1px 2px 7px;color:var(--muted);font:400 .58rem/1.45 var(--ui-font),system-ui,sans-serif;opacity:.82}
+.preset-preview.rozerrrone1{display:grid;place-items:center;background:linear-gradient(145deg,#10244b,#050a16);color:#fff;font:800 19px/1 Inter,system-ui,sans-serif;border:1px solid #3979d8;box-shadow:inset 0 0 12px #2765b955}
 .theme-extra-list .theme-preset-wrap{margin:5px 0 8px}
 .preset-preview.minecraft{display:grid;place-items:center;background:linear-gradient(135deg,#4c8b36 0 48%,#80502b 49%);color:#fff;font-weight:1000;font-size:23px;text-shadow:1px 2px #263b1e}
 .preset-preview.vhs{display:grid;place-items:center;background:linear-gradient(145deg,#160e38,#f02d91 55%,#00d9ed);color:#fff;font-size:10px;font-weight:1000;letter-spacing:-1px;text-shadow:1px 1px #120b29}
@@ -731,6 +733,14 @@ body :is(.opt input:checked + span,.seg input:checked + span){box-shadow:inset 0
 /* Seasonal map decorations sit above map tiles but below object markers and controls. */
 #autumnLeavesCanvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:450}
 
+
+/* Авторська тема @rozerrrone1 — navy/black/white, Nothing-inspired */
+:root[data-preset="rozerrrone1"]{--bg:#070d18!important;--fg:#f5f8ff!important;--muted:#9aa9bf!important;--line:rgba(91,143,218,.25)!important;--hover:rgba(70,119,190,.13)!important;--glass-bg:rgba(9,18,34,.88)!important;--accent:#3979d8!important;--accent-soft:rgba(57,121,216,.2)!important;--g-shadow:rgba(0,0,0,.62)!important;--r:15px!important}
+:root[data-preset="rozerrrone1"] body{background:radial-gradient(ellipse at 15% 0%,#142b4b 0%,#080f1d 43%,#050912 100%)!important;color:#f5f8ff!important}
+:root[data-preset="rozerrrone1"] :is(.bar,.panel,.auth-card,.feedback-card,.status,.notice,.profile-search-result,.leaflet-popup-content-wrapper,.leaflet-control-zoom){background:linear-gradient(145deg,rgba(17,34,58,.96),rgba(7,13,24,.97))!important;color:#f5f8ff!important;border:1px solid rgba(76,132,211,.35)!important;box-shadow:0 12px 34px rgba(0,0,0,.45),inset 0 1px rgba(255,255,255,.045)!important;backdrop-filter:blur(18px)!important;-webkit-backdrop-filter:blur(18px)!important}
+:root[data-preset="rozerrrone1"] :is(button,.opt,.seg,.setting-select,.theme-preset,.auth-input,.profile-search-field){border-radius:15px!important;border-color:rgba(91,143,218,.32)!important;color:#f5f8ff!important}
+:root[data-preset="rozerrrone1"] :is(.auth-primary,.profile-save,.feedback-link:hover,.gps-btn.active,.gear[aria-expanded="true"],.seg input:checked+span){background:linear-gradient(135deg,#3979d8,#2457a4)!important;color:#fff!important;border-color:#5d9bf2!important}
+:root[data-preset="rozerrrone1"] .brand{color:#fff!important;letter-spacing:.035em;text-shadow:0 0 16px rgba(57,121,216,.35)!important}
 
 /* Minecraft + VHS 1990 complete interface themes */
 :root[data-preset="minecraft"]{--bg:#18251a!important;--fg:#eff7e8!important;--muted:#a8bea0!important;--line:#526e49!important;--hover:#293d2b!important;--glass-bg:#202f22!important;--accent:#78b84b!important;--accent-soft:rgba(120,184,75,.2)!important;--g-shadow:rgba(0,0,0,.65)!important;--r:2px!important}
@@ -868,7 +878,12 @@ body :is(.opt input:checked + span,.seg input:checked + span){box-shadow:inset 0
     <p class="theme-category-title" data-i18n="themeCategorySites">Сайти та соцмережі</p>
     <div class="theme-preset-wrap">
       <button type="button" class="theme-preset" data-preset="tiktok"><span class="preset-preview tt"></span><span data-i18n="presetTikTok">TikTok</span></button>
-      <button type="button" class="theme-preset" data-preset="pornhub"><span class="preset-preview ph"></span><span data-i18n="presetPornhub">Pornhub</span></button>
+      <button type="button" class="theme-preset" data-preset="pornhub"><span class="preset-preview ph"></span><span data-i18n="presetPornhub">PH</span></button>
+    </div>
+    <p class="theme-category-title" data-i18n="themeCategoryAuthors">Авторські</p>
+    <p class="theme-category-note" data-i18n="themeAuthorsNote">У назвах тем вказаний TikTok-нік їхніх авторів</p>
+    <div class="theme-preset-wrap">
+      <button type="button" class="theme-preset" data-preset="rozerrrone1"><span class="preset-preview rozerrrone1">R</span><span>@rozerrrone1</span></button>
     </div>
     <p class="theme-category-title" data-i18n="themeCategoryOther">Інше</p>
     <div class="theme-preset-wrap">
@@ -1074,7 +1089,7 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
       searchLoading: 'Шукаю профілі…', searchNoResults: 'За цим нікнеймом профілів не знайдено', searchFound: 'Знайдено профілів: ',
       searchPermission: 'Firebase заборонив читання профілів. Онови Firestore Rules.', searchError: 'Не вдалося виконати пошук. Перевір з’єднання з Firebase.',
       feedbackTitle: 'Зворотний зв’язок', feedbackText: 'Знайшов помилку або маєш пропозицію? Напиши команді DOZ TEAM URBEX у відповідному чаті.',
-      reportBug: 'Повідомити про баг', suggestIdea: 'Запропонувати ідею', ideasChannel: 'Канал з ідеями', themeIdeasTitle: 'Ідеї для тем', themeIdeasText: 'Маєш ідею для нової теми оформлення? Напиши її в наш Telegram-канал з ідеями.', moreThemes: 'Показати інші теми', addThemeIdea: 'Запропонувати нову тему', menuSpacing: 'Відстань між пунктами меню', presetTitle: 'Готові теми', presetIOS: 'iOS 27', presetWindows: 'Windows', presetNote: 'Готова тема змінює вигляд інтерфейсу, але не карту та мову.', fontSizeLabel: 'Розмір тексту', fontLabel: 'Шрифт інтерфейсу', fontSystem: 'Звичайний системний', radiusValue: 'px', presetPornhub: 'Pornhub', buttonStyleTitle: 'Стиль кнопок', buttonGlass: 'Скло', buttonFlat: 'Плоскі', buttonSolid: 'Акцентні', fontCaveat: 'Caveat — рукописний', fontNeucha: 'Neucha — мальований', fontComfortaa: 'Comfortaa — округлий', fontOswald: 'Oswald — вузький', fontPlayfair: 'Playfair Display — класичний'
+      reportBug: 'Повідомити про баг', suggestIdea: 'Запропонувати ідею', ideasChannel: 'Канал з ідеями', themeIdeasTitle: 'Ідеї для тем', themeIdeasText: 'Маєш ідею для нової теми оформлення? Напиши її в наш Telegram-канал з ідеями.', moreThemes: 'Показати інші теми', addThemeIdea: 'Запропонувати нову тему', menuSpacing: 'Відстань між пунктами меню', presetTitle: 'Готові теми', presetIOS: 'iOS 27', presetWindows: 'Windows', presetNote: 'Готова тема змінює вигляд інтерфейсу, але не карту та мову.', fontSizeLabel: 'Розмір тексту', fontLabel: 'Шрифт інтерфейсу', fontSystem: 'Звичайний системний', radiusValue: 'px', presetPornhub: 'PH', buttonStyleTitle: 'Стиль кнопок', buttonGlass: 'Скло', buttonFlat: 'Плоскі', buttonSolid: 'Акцентні', fontCaveat: 'Caveat — рукописний', fontNeucha: 'Neucha — мальований', fontComfortaa: 'Comfortaa — округлий', fontOswald: 'Oswald — вузький', fontPlayfair: 'Playfair Display — класичний'
     },
     ru: {
       settings: 'Настройки', viewTitle: 'Вид карты',
@@ -1117,7 +1132,7 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
       searchLoading: 'Ищу профили…', searchNoResults: 'Профили с таким никнеймом не найдены', searchFound: 'Найдено профилей: ',
       searchPermission: 'Firebase запретил чтение профилей. Обнови Firestore Rules.', searchError: 'Не удалось выполнить поиск. Проверь подключение к Firebase.',
       feedbackTitle: 'Обратная связь', feedbackText: 'Нашёл ошибку или есть предложение? Напиши команде DOZ TEAM URBEX в соответствующем чате.',
-      reportBug: 'Сообщить об ошибке', suggestIdea: 'Предложить идею', ideasChannel: 'Канал с идеями', themeIdeasTitle: 'Идеи для тем', themeIdeasText: 'Есть идея для новой темы оформления? Напиши её в наш Telegram-канал с идеями.', moreThemes: 'Показать остальные темы', addThemeIdea: 'Предложить новую тему', menuSpacing: 'Расстояние между пунктами меню', presetTitle: 'Готовые темы', presetIOS: 'iOS 27', presetWindows: 'Windows', presetNote: 'Готовая тема меняет вид интерфейса, но не карту и язык.', fontSizeLabel: 'Размер текста', fontLabel: 'Шрифт интерфейса', fontSystem: 'Обычный системный', radiusValue: 'px', presetPornhub: 'Pornhub', buttonStyleTitle: 'Стиль кнопок', buttonGlass: 'Стекло', buttonFlat: 'Плоские', buttonSolid: 'Акцентные', fontCaveat: 'Caveat — рукописный', fontNeucha: 'Neucha — рисованный', fontComfortaa: 'Comfortaa — округлый', fontOswald: 'Oswald — узкий', fontPlayfair: 'Playfair Display — классический'
+      reportBug: 'Сообщить об ошибке', suggestIdea: 'Предложить идею', ideasChannel: 'Канал с идеями', themeIdeasTitle: 'Идеи для тем', themeIdeasText: 'Есть идея для новой темы оформления? Напиши её в наш Telegram-канал с идеями.', moreThemes: 'Показать остальные темы', addThemeIdea: 'Предложить новую тему', menuSpacing: 'Расстояние между пунктами меню', presetTitle: 'Готовые темы', presetIOS: 'iOS 27', presetWindows: 'Windows', presetNote: 'Готовая тема меняет вид интерфейса, но не карту и язык.', fontSizeLabel: 'Размер текста', fontLabel: 'Шрифт интерфейса', fontSystem: 'Обычный системный', radiusValue: 'px', presetPornhub: 'PH', buttonStyleTitle: 'Стиль кнопок', buttonGlass: 'Стекло', buttonFlat: 'Плоские', buttonSolid: 'Акцентные', fontCaveat: 'Caveat — рукописный', fontNeucha: 'Neucha — рисованный', fontComfortaa: 'Comfortaa — округлый', fontOswald: 'Oswald — узкий', fontPlayfair: 'Playfair Display — классический'
     },
     en: {
       settings: 'Settings', viewTitle: 'Map appearance',
@@ -1162,20 +1177,20 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
       searchLoading: 'Searching profiles…', searchNoResults: 'No profiles found for this nickname', searchFound: 'Profiles found: ',
       searchPermission: 'Firebase denied access to profiles. Update Firestore Rules.', searchError: 'Search failed. Check your Firebase connection.',
       feedbackTitle: 'Feedback', feedbackText: 'Found a bug or have a suggestion? Message the DOZ TEAM URBEX team in the appropriate chat.',
-      reportBug: 'Report a bug', suggestIdea: 'Suggest an idea', ideasChannel: 'Ideas channel', themeIdeasTitle: 'Theme ideas', themeIdeasText: 'Have an idea for a new look? Share it in our Telegram ideas channel.', moreThemes: 'Show more themes', addThemeIdea: 'Suggest a theme', menuSpacing: 'Menu item spacing', presetTitle: 'Presets', presetIOS: 'iOS 27', presetWindows: 'Windows', presetNote: 'A preset changes the interface only, not the map or language.', fontSizeLabel: 'Text size', fontLabel: 'Interface font', fontSystem: 'Default system', radiusValue: 'px', presetPornhub: 'Pornhub', buttonStyleTitle: 'Button style', buttonGlass: 'Glass', buttonFlat: 'Flat', buttonSolid: 'Accent', fontCaveat: 'Caveat — handwritten', fontNeucha: 'Neucha — sketch', fontComfortaa: 'Comfortaa — rounded', fontOswald: 'Oswald — condensed', fontPlayfair: 'Playfair Display — classic'
+      reportBug: 'Report a bug', suggestIdea: 'Suggest an idea', ideasChannel: 'Ideas channel', themeIdeasTitle: 'Theme ideas', themeIdeasText: 'Have an idea for a new look? Share it in our Telegram ideas channel.', moreThemes: 'Show more themes', addThemeIdea: 'Suggest a theme', menuSpacing: 'Menu item spacing', presetTitle: 'Presets', presetIOS: 'iOS 27', presetWindows: 'Windows', presetNote: 'A preset changes the interface only, not the map or language.', fontSizeLabel: 'Text size', fontLabel: 'Interface font', fontSystem: 'Default system', radiusValue: 'px', presetPornhub: 'PH', buttonStyleTitle: 'Button style', buttonGlass: 'Glass', buttonFlat: 'Flat', buttonSolid: 'Accent', fontCaveat: 'Caveat — handwritten', fontNeucha: 'Neucha — sketch', fontComfortaa: 'Comfortaa — rounded', fontOswald: 'Oswald — condensed', fontPlayfair: 'Playfair Display — classic'
     }
   };
   Object.assign(I18N.uk, {
     mapWarningTitle:'Увага: інформація на карті', mapWarningText:'На карті можуть бути позначені підземні об’єкти, укриття та бомбосховища. Дані з відкритих джерел можуть бути неповними, застарілими або неперевіреними. Наявність позначки не підтверджує доступність чи безпечний стан об’єкта. Під час тривоги користуйтеся офіційними вказівками служб.',
-    presetGta6:'GTA VI · Вайс-Сіті', presetTikTok:'TikTok', presetNewYear:'Новий рік', presetCyberpunk:'Cyberpunk 2077', presetChernobyl:'Чорнобиль', presetXP:'Windows XP', presetNothing:'Nothing OS', presetAutumn:'Осінь', presetMinecraft:'Minecraft', presetVHS:'VHS 1990', themeCategoryGames:'Ігри', themeCategoryOS:'Операційні системи', themeCategorySites:'Сайти та соцмережі', themeCategoryOther:'Інше'
+    presetGta6:'GTA VI · Вайс-Сіті', presetTikTok:'TikTok', presetNewYear:'Новий рік', presetCyberpunk:'Cyberpunk 2077', presetChernobyl:'Чорнобиль', presetXP:'Windows XP', presetNothing:'Nothing OS', presetAutumn:'Осінь', presetMinecraft:'Minecraft', presetVHS:'VHS 1990', themeCategoryGames:'Ігри', themeCategoryOS:'Операційні системи', themeCategorySites:'Сайти та соцмережі', themeCategoryOther:'Інше', themeCategoryAuthors:'Авторські', themeAuthorsNote:'У назвах тем вказаний TikTok-нік їхніх авторів'
   });
   Object.assign(I18N.ru, {
     mapWarningTitle:'Внимание: информация на карте', mapWarningText:'На карте могут быть отмечены подземные объекты, укрытия и бомбоубежища. Данные из открытых источников могут быть неполными, устаревшими или непроверенными. Метка не подтверждает доступность или безопасное состояние объекта. Во время тревоги следуйте официальным указаниям служб.',
-    presetGta6:'GTA VI · Вайс-Сити', presetTikTok:'TikTok', presetNewYear:'Новый год', presetCyberpunk:'Cyberpunk 2077', presetChernobyl:'Чернобыль', presetXP:'Windows XP', presetNothing:'Nothing OS', presetAutumn:'Осень', presetMinecraft:'Minecraft', presetVHS:'VHS 1990', themeCategoryGames:'Игры', themeCategoryOS:'Операционные системы', themeCategorySites:'Сайты и соцсети', themeCategoryOther:'Другое'
+    presetGta6:'GTA VI · Вайс-Сити', presetTikTok:'TikTok', presetNewYear:'Новый год', presetCyberpunk:'Cyberpunk 2077', presetChernobyl:'Чернобыль', presetXP:'Windows XP', presetNothing:'Nothing OS', presetAutumn:'Осень', presetMinecraft:'Minecraft', presetVHS:'VHS 1990', themeCategoryGames:'Игры', themeCategoryOS:'Операционные системы', themeCategorySites:'Сайты и соцсети', themeCategoryOther:'Другое', themeCategoryAuthors:'Авторские', themeAuthorsNote:'В названиях тем указан TikTok-ник их авторов'
   });
   Object.assign(I18N.en, {
     mapWarningTitle:'Map information notice', mapWarningText:'The map may show underground sites, shelters and bomb shelters. Open-source data may be incomplete, outdated or unverified. A marker does not confirm that a site is accessible or safe. During an air raid alert, follow official instructions from local authorities.',
-    presetGta6:'GTA VI · Vice City', presetTikTok:'TikTok', presetNewYear:'New Year', presetCyberpunk:'Cyberpunk 2077', presetChernobyl:'Chernobyl', presetXP:'Windows XP', presetNothing:'Nothing OS', presetAutumn:'Autumn', presetMinecraft:'Minecraft', presetVHS:'VHS 1990', themeCategoryGames:'Games', themeCategoryOS:'Operating systems', themeCategorySites:'Websites & social', themeCategoryOther:'Other'
+    presetGta6:'GTA VI · Vice City', presetTikTok:'TikTok', presetNewYear:'New Year', presetCyberpunk:'Cyberpunk 2077', presetChernobyl:'Chernobyl', presetXP:'Windows XP', presetNothing:'Nothing OS', presetAutumn:'Autumn', presetMinecraft:'Minecraft', presetVHS:'VHS 1990', themeCategoryGames:'Games', themeCategoryOS:'Operating systems', themeCategorySites:'Websites & social', themeCategoryOther:'Other', themeCategoryAuthors:'By creators', themeAuthorsNote:'Theme names show the TikTok handle of their creator'
   });
   const STATUS_COLORS = ['#ff6a2b', '#2fbf6b', '#e5484d'];
 
@@ -1185,7 +1200,7 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
   try { Object.assign(state, JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) {}
   if (!['scheme', 'sat', 'relief'].includes(state.base)) state.base = 'scheme';
   if (!['dark', 'light', 'orange', 'green', 'blue'].includes(state.theme)) state.theme = 'dark';
-  if (!['custom','ios27','windows','pornhub','gta6','tiktok','newyear','cyberpunk','chernobyl','xp','nothing','autumn','minecraft','vhs1990'].includes(state.preset)) state.preset = 'custom';
+  if (!['custom','ios27','windows','pornhub','gta6','tiktok','newyear','cyberpunk','chernobyl','xp','nothing','autumn','minecraft','vhs1990','rozerrrone1'].includes(state.preset)) state.preset = 'custom';
   if (!['glass','flat','solid'].includes(state.buttonStyle)) state.buttonStyle = 'glass';
   if (!/^#[0-9a-fA-F]{6}$/.test(state.accent || '')) state.accent = '#4f8cff';
   if (!['system','Unbounded','Inter','Roboto','Montserrat','Nunito','Rubik','Caveat','Neucha','Comfortaa','Oswald','Playfair Display'].includes(state.font)) state.font = 'system';
@@ -1692,7 +1707,8 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
     nothing: { theme:'dark', glass:false, radius:3, font:'Inter', fontSize:100, accent:'#ff3038', buttonStyle:'flat' },
     autumn: { theme:'dark', glass:true, radius:18, font:'Comfortaa', fontSize:100, accent:'#e58b32', buttonStyle:'glass' },
     minecraft: { theme:'dark', glass:false, radius:2, font:'system', fontSize:100, accent:'#78b84b', buttonStyle:'flat' },
-    vhs1990: { theme:'dark', glass:true, radius:4, font:'system', fontSize:100, accent:'#ff4cae', buttonStyle:'solid' }
+    vhs1990: { theme:'dark', glass:true, radius:4, font:'system', fontSize:100, accent:'#ff4cae', buttonStyle:'solid' },
+    rozerrrone1: { theme:'dark', glass:true, radius:15, font:'Inter', fontSize:100, accent:'#3979d8', buttonStyle:'glass' }
   };
   function setPresetButtons(){ document.querySelectorAll('[data-preset]').forEach(b=>{const active=b.dataset.preset===state.preset;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));}); }
   function applyStyle() {
