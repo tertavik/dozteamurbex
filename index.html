@@ -637,6 +637,12 @@ body :is(.opt input:checked + span,.seg input:checked + span){box-shadow:inset 0
 .theme-preset-wrap{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 14px}
 .theme-preset{display:flex;align-items:center;gap:9px;min-height:58px;padding:9px 10px;border:1px solid var(--line);border-radius:calc(var(--r)*.8);background:var(--hover);color:var(--fg);text-align:left;cursor:pointer;font:600 .7rem/1.25 var(--ui-font),system-ui,sans-serif}
 .theme-preset.active{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+
+.theme-extra-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:-5px 0 14px}
+.theme-more-btn{min-height:39px;border:1px solid var(--line);border-radius:calc(var(--r)*.75);background:var(--glass-bg);color:var(--fg);font:700 18px/1 var(--ui-font),system-ui,sans-serif;cursor:pointer;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transition:transform .18s,background .18s,border-color .18s}
+.theme-more-btn:active{transform:scale(.97)}.theme-add-btn{font-size:23px;color:var(--accent)}
+.theme-preset[hidden]{display:none!important}
+
 .preset-preview{width:34px;height:34px;flex:none;border-radius:10px;border:1px solid #ffffff30;background:linear-gradient(145deg,#08080b 0 50%,#34343c 50%);position:relative;overflow:hidden}
 .preset-preview.ios:after{content:"";position:absolute;inset:5px;border-radius:7px;background:linear-gradient(135deg,#8ab8ff,#c5a5ff)}
 .preset-preview.win{background:linear-gradient(135deg,#f5f7fa 0 50%,#dce4ef 50%)}
@@ -690,6 +696,42 @@ body :is(.opt input:checked + span,.seg input:checked + span){box-shadow:inset 0
 .snow-pile-marker{background:transparent;border:0}.snow-pile{display:block;width:19px;height:9px;border-radius:100% 100% 55% 55%;background:linear-gradient(180deg,#fff 0%,#e9f8ff 55%,#b9d7e8 100%);box-shadow:0 2px 4px #001a2b77;position:relative}.snow-pile:before{content:"";position:absolute;width:10px;height:6px;left:3px;top:-3px;border-radius:100%;background:#fff}.snow-pile:after{content:"";position:absolute;width:5px;height:4px;right:1px;top:0;border-radius:100%;background:#f7fdff}
 :root[data-preset="newyear"] .bar:after{content:"✦";color:#d8f4ff;position:absolute;right:-8px;top:-7px;font-size:13px;pointer-events:none}
 @media(max-width:600px){.map-safety-notice{top:calc(68px + env(safe-area-inset-top,0px));padding:10px 11px}.map-safety-copy p{font-size:10px}}
+
+
+/* Additional complete presets: language and map tile layer remain untouched. */
+.preset-preview.cyber{background:linear-gradient(135deg,#09051b 0 48%,#00f0ff 49% 53%,#ff2bd6 54%)}
+.preset-preview.chern{background:linear-gradient(135deg,#171b12,#59613b 55%,#a44c24)}
+.preset-preview.xp{background:linear-gradient(135deg,#1674d1 0 48%,#62b64b 49% 100%)}
+.preset-preview.nothing{background:#090909}.preset-preview.nothing:after{content:"●";position:absolute;inset:0;display:grid;place-items:center;color:#ff3038;font-size:24px}
+.preset-preview.autumn{background:linear-gradient(135deg,#54250e,#e58b32 52%,#9b3d12)}
+.preset-preview.halloween{background:linear-gradient(135deg,#160d27,#ff7a18 58%,#3a164c)}
+:root[data-preset="cyberpunk"]{--bg:#090719!important;--fg:#effcff!important;--muted:#9bb6c7!important;--line:rgba(0,240,255,.34)!important;--hover:rgba(255,43,214,.13)!important;--glass-bg:rgba(13,10,34,.88)!important;--accent:#00f0ff!important;--accent-soft:rgba(0,240,255,.18)!important;--g-shadow:rgba(0,0,0,.62)!important;--r:12px!important}
+:root[data-preset="cyberpunk"] :is(.bar,.panel,.auth-card,.feedback-card,.status,.notice,.profile-search-result,.leaflet-popup-content-wrapper){background:linear-gradient(135deg,rgba(17,12,42,.96),rgba(9,27,43,.94))!important;border-color:#00f0ff66!important;box-shadow:0 0 18px #00f0ff18,0 0 24px #ff2bd618!important}
+:root[data-preset="cyberpunk"] :is(.auth-primary,.profile-save,.feedback-link:hover,.gps-btn.active,.gear[aria-expanded="true"]){background:linear-gradient(100deg,#00d9ef,#a52bff)!important;color:#080719!important;border-color:#00f0ff!important}
+:root[data-preset="cyberpunk"] .brand{text-shadow:0 0 10px #00f0ff,2px 0 #ff2bd6!important}
+:root[data-preset="chernobyl"]{--bg:#171b13!important;--fg:#e4e8d5!important;--muted:#a4ad8a!important;--line:rgba(181,195,111,.3)!important;--hover:rgba(130,148,71,.14)!important;--glass-bg:rgba(27,32,20,.96)!important;--accent:#b6c45a!important;--accent-soft:rgba(182,196,90,.2)!important;--g-shadow:rgba(0,0,0,.62)!important;--r:5px!important}
+:root[data-preset="chernobyl"] :is(.bar,.panel,.auth-card,.feedback-card,.status,.notice,.leaflet-popup-content-wrapper){background:linear-gradient(145deg,#202719,#151a12)!important;border-color:#687447!important;box-shadow:inset 0 0 18px #0005,0 8px 24px #0008!important}
+:root[data-preset="chernobyl"] :is(.auth-primary,.profile-save,.feedback-link:hover,.gps-btn.active){background:#687b3c!important;color:#f2f0d8!important;border-color:#9ba85b!important}
+:root[data-preset="xp"]{--bg:#dce8f7!important;--fg:#172b49!important;--muted:#536c8c!important;--line:#8eb5e7!important;--hover:#c8ddf7!important;--glass-bg:#eaf3ff!important;--accent:#1674d1!important;--accent-soft:rgba(22,116,209,.17)!important;--g-shadow:rgba(24,67,120,.25)!important;--r:7px!important}
+:root[data-preset="xp"] :is(.bar,.panel,.auth-card,.feedback-card,.status,.notice,.leaflet-popup-content-wrapper){background:linear-gradient(180deg,#f8fbff,#cbdcf2)!important;color:#17345b!important;border:1px solid #6e9ed8!important;box-shadow:inset 0 1px #fff,0 5px 18px #17345b30!important}
+:root[data-preset="xp"] .bar{background:linear-gradient(180deg,#5ba6f5,#1765c0 55%,#0c4b9d)!important;color:#fff!important;border-color:#8dc5ff!important}
+:root[data-preset="xp"] .bar :is(button,.brand){color:#fff!important}
+:root[data-preset="xp"] :is(.auth-primary,.profile-save,.feedback-link:hover,.gps-btn.active){background:linear-gradient(180deg,#69b4ff,#1765c0)!important;color:#fff!important;border:1px solid #0d4b9a!important}
+:root[data-preset="nothing"]{--bg:#090909!important;--fg:#f5f5f5!important;--muted:#999!important;--line:#444!important;--hover:#191919!important;--glass-bg:#101010!important;--accent:#ff3038!important;--accent-soft:rgba(255,48,56,.16)!important;--g-shadow:rgba(0,0,0,.65)!important;--r:3px!important}
+:root[data-preset="nothing"] :is(.bar,.panel,.auth-card,.feedback-card,.status,.notice,.leaflet-popup-content-wrapper){background:#0d0d0d!important;border:1px solid #555!important;box-shadow:0 0 0 1px #000,0 8px 24px #0009!important}
+:root[data-preset="nothing"] .brand:after{content:" ●";color:#ff3038;font-size:.7em}
+:root[data-preset="nothing"] :is(.auth-primary,.profile-save,.feedback-link:hover,.gps-btn.active){background:#ff3038!important;color:#fff!important;border-color:#ff3038!important}
+:root[data-preset="autumn"]{--bg:#21150f!important;--fg:#fff0dc!important;--muted:#c6a68a!important;--line:rgba(229,139,50,.34)!important;--hover:rgba(229,139,50,.14)!important;--glass-bg:rgba(48,27,16,.88)!important;--accent:#e58b32!important;--accent-soft:rgba(229,139,50,.2)!important;--g-shadow:rgba(20,8,2,.6)!important;--r:18px!important}
+:root[data-preset="autumn"] :is(.bar,.panel,.auth-card,.feedback-card,.status,.notice,.leaflet-popup-content-wrapper){background:linear-gradient(145deg,rgba(62,34,19,.96),rgba(35,22,15,.96))!important;border-color:#a65a25!important}
+:root[data-preset="autumn"] :is(.auth-primary,.profile-save,.feedback-link:hover,.gps-btn.active){background:linear-gradient(110deg,#d96e24,#f0ad45)!important;color:#281307!important;border-color:#e58b32!important}
+:root[data-preset="halloween"]{--bg:#130d20!important;--fg:#fff0e3!important;--muted:#b9a4c5!important;--line:rgba(255,122,24,.35)!important;--hover:rgba(255,122,24,.14)!important;--glass-bg:rgba(28,16,39,.9)!important;--accent:#ff7a18!important;--accent-soft:rgba(255,122,24,.2)!important;--g-shadow:rgba(0,0,0,.65)!important;--r:16px!important}
+:root[data-preset="halloween"] :is(.bar,.panel,.auth-card,.feedback-card,.status,.notice,.leaflet-popup-content-wrapper){background:linear-gradient(145deg,rgba(35,18,49,.97),rgba(19,13,32,.97))!important;border-color:#8c4c9e!important;box-shadow:0 0 18px #ff7a1818,0 12px 30px #0008!important}
+:root[data-preset="halloween"] :is(.auth-primary,.profile-save,.feedback-link:hover,.gps-btn.active){background:linear-gradient(110deg,#ff7a18,#b64cff)!important;color:#fff!important;border-color:#ff7a18!important}
+/* Seasonal map decorations sit above map tiles but below object markers and controls. */
+#autumnLeavesCanvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:450}
+#halloweenDecor{position:absolute;z-index:350;left:0;right:0;bottom:9px;display:none;justify-content:space-evenly;align-items:flex-end;pointer-events:none;font-size:clamp(18px,3vw,29px);line-height:1;text-shadow:0 2px 5px #0009}
+#halloweenDecor.active{display:flex}
+#halloweenDecor span{filter:drop-shadow(0 2px 2px #0009);opacity:.92}
 
 </style>
 </head>
@@ -783,7 +825,7 @@ body :is(.opt input:checked + span,.seg input:checked + span){box-shadow:inset 0
   </section>
 </div>
 
-<div id="map"></div>
+<div id="map"><div id="halloweenDecor" aria-hidden="true"><span>🎃</span><span>🎃</span><span>🎃</span><span>🎃</span><span>🎃</span></div></div>
 <div id="mapSafetyNotice" class="map-safety-notice" role="note" aria-live="polite">
   <div class="map-safety-icon">ⓘ</div>
   <div class="map-safety-copy"><strong data-i18n="mapWarningTitle">Важливо про карту</strong><p data-i18n="mapWarningText">На карті можуть бути позначені підземні об’єкти, укриття та бомбосховища. Дані зібрані з відкритих джерел, можуть бути неповними або застарілими й не гарантують доступність чи безпечний стан об’єкта. Не використовуйте карту як офіційне джерело під час тривоги.</p></div>
@@ -795,12 +837,22 @@ body :is(.opt input:checked + span,.seg input:checked + span){box-shadow:inset 0
   <div class="profile-panel-head settings-panel-head"><div class="profile-panel-title" data-i18n="settings">Налаштування</div><button type="button" id="closeSettingsBtn" class="profile-close" aria-label="Закрити налаштування" data-i18n-aria="closeSettings">×</button></div>
   <p class="group-title" data-i18n="presetTitle">Готові теми</p>
   <div class="theme-preset-wrap" id="themePresetWrap">
-    <button type="button" class="theme-preset" data-preset="ios27"><span class="preset-preview ios"></span><span data-i18n="presetIOS">iOS 27</span></button>
-    <button type="button" class="theme-preset" data-preset="windows"><span class="preset-preview win"></span><span data-i18n="presetWindows">Windows</span></button>
-    <button type="button" class="theme-preset" data-preset="pornhub"><span class="preset-preview ph"></span><span data-i18n="presetPornhub">Pornhub</span></button>
-    <button type="button" class="theme-preset" data-preset="gta6"><span class="preset-preview gta"></span><span data-i18n="presetGta6">GTA VI · Vice City</span></button>
-    <button type="button" class="theme-preset" data-preset="tiktok"><span class="preset-preview tt"></span><span data-i18n="presetTikTok">TikTok</span></button>
     <button type="button" class="theme-preset" data-preset="newyear"><span class="preset-preview ny">❄</span><span data-i18n="presetNewYear">Новий рік</span></button>
+    <button type="button" class="theme-preset" data-preset="gta6"><span class="preset-preview gta"></span><span data-i18n="presetGta6">GTA VI · Vice City</span></button>
+    <button type="button" class="theme-preset extra-theme" data-preset="ios27" hidden><span class="preset-preview ios"></span><span data-i18n="presetIOS">iOS 27</span></button>
+    <button type="button" class="theme-preset extra-theme" data-preset="windows" hidden><span class="preset-preview win"></span><span data-i18n="presetWindows">Windows</span></button>
+    <button type="button" class="theme-preset extra-theme" data-preset="pornhub" hidden><span class="preset-preview ph"></span><span data-i18n="presetPornhub">Pornhub</span></button>
+    <button type="button" class="theme-preset extra-theme" data-preset="tiktok" hidden><span class="preset-preview tt"></span><span data-i18n="presetTikTok">TikTok</span></button>
+    <button type="button" class="theme-preset extra-theme" data-preset="cyberpunk" hidden><span class="preset-preview cyber"></span><span data-i18n="presetCyberpunk">Cyberpunk 2077</span></button>
+    <button type="button" class="theme-preset extra-theme" data-preset="chernobyl" hidden><span class="preset-preview chern"></span><span data-i18n="presetChernobyl">Чорнобиль</span></button>
+    <button type="button" class="theme-preset extra-theme" data-preset="xp" hidden><span class="preset-preview xp"></span><span data-i18n="presetXP">Windows XP</span></button>
+    <button type="button" class="theme-preset extra-theme" data-preset="nothing" hidden><span class="preset-preview nothing"></span><span data-i18n="presetNothing">Nothing OS</span></button>
+    <button type="button" class="theme-preset extra-theme" data-preset="autumn" hidden><span class="preset-preview autumn"></span><span data-i18n="presetAutumn">Осінь</span></button>
+    <button type="button" class="theme-preset extra-theme" data-preset="halloween" hidden><span class="preset-preview halloween"></span><span data-i18n="presetHalloween">Гелловін</span></button>
+  </div>
+  <div class="theme-extra-actions">
+    <button type="button" id="toggleMoreThemes" class="theme-more-btn" aria-expanded="false" data-i18n-title="moreThemes">•••</button>
+    <button type="button" id="openThemeIdeas" class="theme-more-btn theme-add-btn" data-i18n-title="addThemeIdea">＋</button>
   </div>
   <p class="preset-note" data-i18n="presetNote">Готова тема налаштовує вигляд інтерфейсу, але не змінює карту та мову.</p>
   <p class="group-title" data-i18n="viewTitle"></p>
@@ -841,7 +893,7 @@ body :is(.opt input:checked + span,.seg input:checked + span){box-shadow:inset 0
   </div>
   <p class="setting-subtitle" data-i18n="fontLabel">Шрифт інтерфейсу</p>
   <select class="setting-select" id="fontSelect" aria-label="Шрифт інтерфейсу">
-    <option value="system" data-i18n="fontSystem" style="font-family:system-ui,sans-serif">Звичайний системний</option>
+    <option value="system" data-i18n="fontSystem" style="font-family:system-ui,sans-serif">Звичайний системний</option><option value="Tahoma" style="font-family:Tahoma,sans-serif">Tahoma</option>
     <option value="Unbounded" style="font-family:'Unbounded',sans-serif">Unbounded</option><option value="Inter" style="font-family:'Inter',sans-serif">Inter</option><option value="Roboto" style="font-family:'Roboto',sans-serif">Roboto</option><option value="Montserrat" style="font-family:'Montserrat',sans-serif">Montserrat</option><option value="Nunito" style="font-family:'Nunito',sans-serif">Nunito</option><option value="Rubik" style="font-family:'Rubik',sans-serif">Rubik</option><option value="Caveat" data-i18n="fontCaveat" style="font-family:'Caveat',cursive">Caveat — рукописний</option><option value="Neucha" data-i18n="fontNeucha" style="font-family:'Neucha',cursive">Neucha — намальований</option><option value="Comfortaa" data-i18n="fontComfortaa" style="font-family:'Comfortaa',sans-serif">Comfortaa — округлий</option><option value="Oswald" data-i18n="fontOswald" style="font-family:'Oswald',sans-serif">Oswald — вузький</option><option value="Playfair Display" data-i18n="fontPlayfair" style="font-family:'Playfair Display',serif">Playfair Display — класичний</option>
   </select>
   <div class="custom-select" id="fontCustomSelect">
@@ -922,6 +974,14 @@ body :is(.opt input:checked + span,.seg input:checked + span){box-shadow:inset 0
     <p data-i18n="feedbackText">Знайшов помилку або маєш пропозицію? Напиши команді DOZ TEAM URBEX у відповідному чаті.</p>
     <a class="feedback-link" href="https://t.me/dozteamurbex/10" target="_blank" rel="noopener"><span><span data-i18n="reportBug">Повідомити про баг</span><small>@dozteamurbex/10</small></span><span>↗</span></a>
     <a class="feedback-link" href="https://t.me/dozteamurbex/11" target="_blank" rel="noopener"><span><span data-i18n="suggestIdea">Запропонувати ідею</span><small>@dozteamurbex/11</small></span><span>↗</span></a>
+    <a class="feedback-link" href="https://t.me/dozteamurbex/11" target="_blank" rel="noopener"><span><span data-i18n="ideasChannel">Канал з ідеями</span><small>@dozteamurbex</small></span><span>↗</span></a>
+  </section>
+</div>
+<div id="themeIdeasModal" class="feedback-backdrop" aria-hidden="true">
+  <section class="feedback-card" role="dialog" aria-modal="true" aria-labelledby="themeIdeasTitle">
+    <div class="feedback-head"><span id="themeIdeasTitle" data-i18n="themeIdeasTitle">Ідеї для тем</span><button id="themeIdeasClose" class="feedback-close" type="button" aria-label="Закрити" data-i18n-aria="close">×</button></div>
+    <p data-i18n="themeIdeasText">Маєш ідею для нової теми оформлення? Напиши її в наш Telegram-канал з ідеями.</p>
+    <a class="feedback-link" href="https://t.me/dozteamurbex/11" target="_blank" rel="noopener"><span><span data-i18n="ideasChannel">Канал з ідеями</span><small>@dozteamurbex</small></span><span>↗</span></a>
   </section>
 </div>
 <div id="notice" class="notice" role="alert" data-i18n="tilesFail" hidden></div>
@@ -987,7 +1047,7 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
       searchLoading: 'Шукаю профілі…', searchNoResults: 'За цим нікнеймом профілів не знайдено', searchFound: 'Знайдено профілів: ',
       searchPermission: 'Firebase заборонив читання профілів. Онови Firestore Rules.', searchError: 'Не вдалося виконати пошук. Перевір з’єднання з Firebase.',
       feedbackTitle: 'Зворотний зв’язок', feedbackText: 'Знайшов помилку або маєш пропозицію? Напиши команді DOZ TEAM URBEX у відповідному чаті.',
-      reportBug: 'Повідомити про баг', suggestIdea: 'Запропонувати ідею', menuSpacing: 'Відстань між пунктами меню', presetTitle: 'Готові теми', presetIOS: 'iOS 27', presetWindows: 'Windows', presetNote: 'Готова тема змінює вигляд інтерфейсу, але не карту та мову.', fontSizeLabel: 'Розмір тексту', fontLabel: 'Шрифт інтерфейсу', fontSystem: 'Звичайний системний', radiusValue: 'px', presetPornhub: 'Pornhub', buttonStyleTitle: 'Стиль кнопок', buttonGlass: 'Скло', buttonFlat: 'Плоскі', buttonSolid: 'Акцентні', fontCaveat: 'Caveat — рукописний', fontNeucha: 'Neucha — мальований', fontComfortaa: 'Comfortaa — округлий', fontOswald: 'Oswald — вузький', fontPlayfair: 'Playfair Display — класичний'
+      reportBug: 'Повідомити про баг', suggestIdea: 'Запропонувати ідею', ideasChannel: 'Канал з ідеями', themeIdeasTitle: 'Ідеї для тем', themeIdeasText: 'Маєш ідею для нової теми оформлення? Напиши її в наш Telegram-канал з ідеями.', moreThemes: 'Показати інші теми', addThemeIdea: 'Запропонувати нову тему', menuSpacing: 'Відстань між пунктами меню', presetTitle: 'Готові теми', presetIOS: 'iOS 27', presetWindows: 'Windows', presetNote: 'Готова тема змінює вигляд інтерфейсу, але не карту та мову.', fontSizeLabel: 'Розмір тексту', fontLabel: 'Шрифт інтерфейсу', fontSystem: 'Звичайний системний', radiusValue: 'px', presetPornhub: 'Pornhub', buttonStyleTitle: 'Стиль кнопок', buttonGlass: 'Скло', buttonFlat: 'Плоскі', buttonSolid: 'Акцентні', fontCaveat: 'Caveat — рукописний', fontNeucha: 'Neucha — мальований', fontComfortaa: 'Comfortaa — округлий', fontOswald: 'Oswald — вузький', fontPlayfair: 'Playfair Display — класичний'
     },
     ru: {
       settings: 'Настройки', viewTitle: 'Вид карты',
@@ -1030,7 +1090,7 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
       searchLoading: 'Ищу профили…', searchNoResults: 'Профили с таким никнеймом не найдены', searchFound: 'Найдено профилей: ',
       searchPermission: 'Firebase запретил чтение профилей. Обнови Firestore Rules.', searchError: 'Не удалось выполнить поиск. Проверь подключение к Firebase.',
       feedbackTitle: 'Обратная связь', feedbackText: 'Нашёл ошибку или есть предложение? Напиши команде DOZ TEAM URBEX в соответствующем чате.',
-      reportBug: 'Сообщить об ошибке', suggestIdea: 'Предложить идею', menuSpacing: 'Расстояние между пунктами меню', presetTitle: 'Готовые темы', presetIOS: 'iOS 27', presetWindows: 'Windows', presetNote: 'Готовая тема меняет вид интерфейса, но не карту и язык.', fontSizeLabel: 'Размер текста', fontLabel: 'Шрифт интерфейса', fontSystem: 'Обычный системный', radiusValue: 'px', presetPornhub: 'Pornhub', buttonStyleTitle: 'Стиль кнопок', buttonGlass: 'Стекло', buttonFlat: 'Плоские', buttonSolid: 'Акцентные', fontCaveat: 'Caveat — рукописный', fontNeucha: 'Neucha — рисованный', fontComfortaa: 'Comfortaa — округлый', fontOswald: 'Oswald — узкий', fontPlayfair: 'Playfair Display — классический'
+      reportBug: 'Сообщить об ошибке', suggestIdea: 'Предложить идею', ideasChannel: 'Канал с идеями', themeIdeasTitle: 'Идеи для тем', themeIdeasText: 'Есть идея для новой темы оформления? Напиши её в наш Telegram-канал с идеями.', moreThemes: 'Показать остальные темы', addThemeIdea: 'Предложить новую тему', menuSpacing: 'Расстояние между пунктами меню', presetTitle: 'Готовые темы', presetIOS: 'iOS 27', presetWindows: 'Windows', presetNote: 'Готовая тема меняет вид интерфейса, но не карту и язык.', fontSizeLabel: 'Размер текста', fontLabel: 'Шрифт интерфейса', fontSystem: 'Обычный системный', radiusValue: 'px', presetPornhub: 'Pornhub', buttonStyleTitle: 'Стиль кнопок', buttonGlass: 'Стекло', buttonFlat: 'Плоские', buttonSolid: 'Акцентные', fontCaveat: 'Caveat — рукописный', fontNeucha: 'Neucha — рисованный', fontComfortaa: 'Comfortaa — округлый', fontOswald: 'Oswald — узкий', fontPlayfair: 'Playfair Display — классический'
     },
     en: {
       settings: 'Settings', viewTitle: 'Map appearance',
@@ -1075,20 +1135,20 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
       searchLoading: 'Searching profiles…', searchNoResults: 'No profiles found for this nickname', searchFound: 'Profiles found: ',
       searchPermission: 'Firebase denied access to profiles. Update Firestore Rules.', searchError: 'Search failed. Check your Firebase connection.',
       feedbackTitle: 'Feedback', feedbackText: 'Found a bug or have a suggestion? Message the DOZ TEAM URBEX team in the appropriate chat.',
-      reportBug: 'Report a bug', suggestIdea: 'Suggest an idea', menuSpacing: 'Menu item spacing', presetTitle: 'Presets', presetIOS: 'iOS 27', presetWindows: 'Windows', presetNote: 'A preset changes the interface only, not the map or language.', fontSizeLabel: 'Text size', fontLabel: 'Interface font', fontSystem: 'Default system', radiusValue: 'px', presetPornhub: 'Pornhub', buttonStyleTitle: 'Button style', buttonGlass: 'Glass', buttonFlat: 'Flat', buttonSolid: 'Accent', fontCaveat: 'Caveat — handwritten', fontNeucha: 'Neucha — sketch', fontComfortaa: 'Comfortaa — rounded', fontOswald: 'Oswald — condensed', fontPlayfair: 'Playfair Display — classic'
+      reportBug: 'Report a bug', suggestIdea: 'Suggest an idea', ideasChannel: 'Ideas channel', themeIdeasTitle: 'Theme ideas', themeIdeasText: 'Have an idea for a new look? Share it in our Telegram ideas channel.', moreThemes: 'Show more themes', addThemeIdea: 'Suggest a theme', menuSpacing: 'Menu item spacing', presetTitle: 'Presets', presetIOS: 'iOS 27', presetWindows: 'Windows', presetNote: 'A preset changes the interface only, not the map or language.', fontSizeLabel: 'Text size', fontLabel: 'Interface font', fontSystem: 'Default system', radiusValue: 'px', presetPornhub: 'Pornhub', buttonStyleTitle: 'Button style', buttonGlass: 'Glass', buttonFlat: 'Flat', buttonSolid: 'Accent', fontCaveat: 'Caveat — handwritten', fontNeucha: 'Neucha — sketch', fontComfortaa: 'Comfortaa — rounded', fontOswald: 'Oswald — condensed', fontPlayfair: 'Playfair Display — classic'
     }
   };
   Object.assign(I18N.uk, {
     mapWarningTitle:'Увага: інформація на карті', mapWarningText:'На карті можуть бути позначені підземні об’єкти, укриття та бомбосховища. Дані з відкритих джерел можуть бути неповними, застарілими або неперевіреними. Наявність позначки не підтверджує доступність чи безпечний стан об’єкта. Під час тривоги користуйтеся офіційними вказівками служб.',
-    presetGta6:'GTA VI · Вайс-Сіті', presetTikTok:'TikTok', presetNewYear:'Новий рік'
+    presetGta6:'GTA VI · Вайс-Сіті', presetTikTok:'TikTok', presetNewYear:'Новий рік', presetCyberpunk:'Cyberpunk 2077', presetChernobyl:'Чорнобиль', presetXP:'Windows XP', presetNothing:'Nothing OS', presetAutumn:'Осінь', presetHalloween:'Гелловін'
   });
   Object.assign(I18N.ru, {
     mapWarningTitle:'Внимание: информация на карте', mapWarningText:'На карте могут быть отмечены подземные объекты, укрытия и бомбоубежища. Данные из открытых источников могут быть неполными, устаревшими или непроверенными. Метка не подтверждает доступность или безопасное состояние объекта. Во время тревоги следуйте официальным указаниям служб.',
-    presetGta6:'GTA VI · Вайс-Сити', presetTikTok:'TikTok', presetNewYear:'Новый год'
+    presetGta6:'GTA VI · Вайс-Сити', presetTikTok:'TikTok', presetNewYear:'Новый год', presetCyberpunk:'Cyberpunk 2077', presetChernobyl:'Чернобыль', presetXP:'Windows XP', presetNothing:'Nothing OS', presetAutumn:'Осень', presetHalloween:'Хэллоуин'
   });
   Object.assign(I18N.en, {
     mapWarningTitle:'Map information notice', mapWarningText:'The map may show underground sites, shelters and bomb shelters. Open-source data may be incomplete, outdated or unverified. A marker does not confirm that a site is accessible or safe. During an air raid alert, follow official instructions from local authorities.',
-    presetGta6:'GTA VI · Vice City', presetTikTok:'TikTok', presetNewYear:'New Year'
+    presetGta6:'GTA VI · Vice City', presetTikTok:'TikTok', presetNewYear:'New Year', presetCyberpunk:'Cyberpunk 2077', presetChernobyl:'Chernobyl', presetXP:'Windows XP', presetNothing:'Nothing OS', presetAutumn:'Autumn', presetHalloween:'Halloween'
   });
   const STATUS_COLORS = ['#ff6a2b', '#2fbf6b', '#e5484d'];
 
@@ -1098,7 +1158,7 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
   try { Object.assign(state, JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) {}
   if (!['scheme', 'sat', 'relief'].includes(state.base)) state.base = 'scheme';
   if (!['dark', 'light', 'orange', 'green', 'blue'].includes(state.theme)) state.theme = 'dark';
-  if (!['custom','ios27','windows','pornhub','gta6','tiktok','newyear'].includes(state.preset)) state.preset = 'custom';
+  if (!['custom','ios27','windows','pornhub','gta6','tiktok','newyear','cyberpunk','chernobyl','xp','nothing','autumn','halloween'].includes(state.preset)) state.preset = 'custom';
   if (!['glass','flat','solid'].includes(state.buttonStyle)) state.buttonStyle = 'glass';
   if (!/^#[0-9a-fA-F]{6}$/.test(state.accent || '')) state.accent = '#4f8cff';
   if (!['system','Unbounded','Inter','Roboto','Montserrat','Nunito','Rubik','Caveat','Neucha','Comfortaa','Oswald','Playfair Display'].includes(state.font)) state.font = 'system';
@@ -1421,7 +1481,22 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
   function updateSnowEffect(){
     if(state.preset==='newyear'){startSnowfall();renderSnowPiles();}
     else{stopSnowfall();if(snowPiles)snowPiles.clearLayers();}
+    updateAutumnEffect();
+    const halloween=document.getElementById('halloweenDecor');
+    if(halloween)halloween.classList.toggle('active',state.preset==='halloween');
   }
+  let autumnCanvas=null,autumnFrame=0,autumnCtx=null,autumnLeaves=[];
+  function stopAutumn(){if(autumnFrame)cancelAnimationFrame(autumnFrame);autumnFrame=0;if(autumnCanvas){autumnCanvas.remove();autumnCanvas=null;autumnCtx=null;}autumnLeaves=[];}
+  function startAutumn(){
+    const mapEl=document.getElementById('map');if(!mapEl)return;
+    if(!autumnCanvas){autumnCanvas=document.createElement('canvas');autumnCanvas.id='autumnLeavesCanvas';mapEl.appendChild(autumnCanvas);autumnCtx=autumnCanvas.getContext('2d');}
+    const resize=()=>{const r=mapEl.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);autumnCanvas.width=Math.max(1,Math.floor(r.width*d));autumnCanvas.height=Math.max(1,Math.floor(r.height*d));autumnCanvas.style.width=r.width+'px';autumnCanvas.style.height=r.height+'px';autumnCtx.setTransform(d,0,0,d,0,0);autumnLeaves=Array.from({length:Math.max(10,Math.min(24,Math.floor(r.width/45)))},()=>({x:Math.random()*r.width,y:Math.random()*r.height,size:5+Math.random()*5,vy:.45+Math.random()*.65,vx:(Math.random()-.5)*.65,rot:Math.random()*6.28,spin:(Math.random()-.5)*.035,color:['#d96b24','#e99a32','#a9441d','#bd7628'][Math.floor(Math.random()*4)]}));};
+    resize();if(!autumnCanvas._resizeBound){window.addEventListener('resize',resize);autumnCanvas._resizeBound=true;}
+    const w=()=>mapEl.clientWidth,h=()=>mapEl.clientHeight;
+    const draw=()=>{if(state.preset!=='autumn'||!autumnCtx)return;autumnCtx.clearRect(0,0,w(),h());for(const l of autumnLeaves){l.y+=l.vy;l.x+=l.vx;l.rot+=l.spin;if(l.y>h()+12){l.y=-12;l.x=Math.random()*w();}if(l.x>w()+12)l.x=-12;if(l.x<-12)l.x=w()+12;autumnCtx.save();autumnCtx.translate(l.x,l.y);autumnCtx.rotate(l.rot);autumnCtx.fillStyle=l.color;autumnCtx.globalAlpha=.88;autumnCtx.beginPath();autumnCtx.moveTo(0,-l.size);autumnCtx.quadraticCurveTo(l.size*1.1,-l.size*.2,0,l.size);autumnCtx.quadraticCurveTo(-l.size*1.1,-l.size*.2,0,-l.size);autumnCtx.fill();autumnCtx.restore();}autumnFrame=requestAnimationFrame(draw);};
+    if(!autumnFrame)autumnFrame=requestAnimationFrame(draw);
+  }
+  function updateAutumnEffect(){if(state.preset==='autumn')startAutumn();else stopAutumn();}
   snowPiles=L.layerGroup().addTo(map);
   map.on('zoomend moveend',renderSnowPiles);
 
@@ -1462,11 +1537,23 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
   }
   window.DozFavorites.setUser = uid => { favoriteUserKey = uid || 'guest'; renderFavoriteList(); };
   const feedbackModal=document.getElementById('feedbackModal');
+  const themeIdeasModal=document.getElementById('themeIdeasModal');
+  const closeThemeIdeas=()=>{themeIdeasModal.classList.remove('open');themeIdeasModal.setAttribute('aria-hidden','true');};
+  document.getElementById('openThemeIdeas')?.addEventListener('click',()=>{themeIdeasModal.classList.add('open');themeIdeasModal.setAttribute('aria-hidden','false');});
+  document.getElementById('themeIdeasClose')?.addEventListener('click',closeThemeIdeas);
+  themeIdeasModal?.addEventListener('click',e=>{if(e.target===themeIdeasModal)closeThemeIdeas();});
+  const moreThemesBtn=document.getElementById('toggleMoreThemes');
+  moreThemesBtn?.addEventListener('click',()=>{
+    const expanded=moreThemesBtn.getAttribute('aria-expanded')==='true';
+    moreThemesBtn.setAttribute('aria-expanded',String(!expanded));
+    document.querySelectorAll('.extra-theme').forEach(b=>b.hidden=expanded);
+    moreThemesBtn.textContent=expanded?'•••':'×';
+  });
   const closeFeedback=()=>{feedbackModal.classList.remove('open');feedbackModal.setAttribute('aria-hidden','true');};
   document.getElementById('feedbackBtn')?.addEventListener('click',()=>{feedbackModal.classList.add('open');feedbackModal.setAttribute('aria-hidden','false');});
   document.getElementById('feedbackClose')?.addEventListener('click',closeFeedback);
   feedbackModal?.addEventListener('click',e=>{if(e.target===feedbackModal)closeFeedback();});
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeFeedback();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeFeedback();closeThemeIdeas();}});
 
   /* ---------- спливаюче вікно ---------- */
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -1572,7 +1659,13 @@ const SHELTERS=[[47.86661,31.57518],[51.87143,32.598782],[50.036412,36.226254],[
     pornhub: { theme:'dark', glass:false, radius:15, font:'Inter', fontSize:100, accent:'#ff9000', buttonStyle:'solid' },
     gta6: { theme:'dark', glass:true, radius:20, font:'Montserrat', fontSize:100, accent:'#ff4fa3', buttonStyle:'solid' },
     tiktok: { theme:'dark', glass:true, radius:16, font:'Inter', fontSize:100, accent:'#25f4ee', buttonStyle:'solid' },
-    newyear: { theme:'dark', glass:true, radius:22, font:'Comfortaa', fontSize:100, accent:'#8bdcff', buttonStyle:'glass' }
+    newyear: { theme:'dark', glass:true, radius:22, font:'Comfortaa', fontSize:100, accent:'#8bdcff', buttonStyle:'glass' },
+    cyberpunk: { theme:'dark', glass:true, radius:12, font:'Unbounded', fontSize:100, accent:'#00f0ff', buttonStyle:'solid' },
+    chernobyl: { theme:'dark', glass:false, radius:5, font:'Oswald', fontSize:100, accent:'#b6c45a', buttonStyle:'flat' },
+    xp: { theme:'light', glass:false, radius:7, font:'Tahoma', fontSize:100, accent:'#1674d1', buttonStyle:'solid' },
+    nothing: { theme:'dark', glass:false, radius:3, font:'Inter', fontSize:100, accent:'#ff3038', buttonStyle:'flat' },
+    autumn: { theme:'dark', glass:true, radius:18, font:'Comfortaa', fontSize:100, accent:'#e58b32', buttonStyle:'glass' },
+    halloween: { theme:'dark', glass:true, radius:16, font:'Rubik', fontSize:100, accent:'#ff7a18', buttonStyle:'solid' }
   };
   function setPresetButtons(){ document.querySelectorAll('[data-preset]').forEach(b=>{const active=b.dataset.preset===state.preset;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));}); }
   function applyStyle() {
